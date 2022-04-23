@@ -1,0 +1,427 @@
+<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="Git-Github, zh-CN"><meta name="description" content="本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>Git-Github | 阿顺</title><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css"><link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css"><link rel="stylesheet" type="text/css" href="/libs/aos/aos.css"><link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css"><link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" type="text/css" href="/css/matery.css"><link rel="stylesheet" type="text/css" href="/css/my.css"><script src="/libs/jquery/jquery.min.js"></script><script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script><style type="text/css" lang="css">#loading-container{position:fixed;top:0;left:0;min-height:100vh;width:100vw;z-index:9999;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#fff;text-align:center;-webkit-transition:opacity 1s ease;-moz-transition:opacity 1s ease;-o-transition:opacity 1s ease;transition:opacity 1s ease}.loading-image{width:120px;height:50px;transform:translate(-50%)}.loading-image div:nth-child(2){-webkit-animation:pacman-balls 1s linear 0s infinite;animation:pacman-balls 1s linear 0s infinite}.loading-image div:nth-child(3){-webkit-animation:pacman-balls 1s linear .33s infinite;animation:pacman-balls 1s linear .33s infinite}.loading-image div:nth-child(4){-webkit-animation:pacman-balls 1s linear .66s infinite;animation:pacman-balls 1s linear .66s infinite}.loading-image div:nth-child(5){-webkit-animation:pacman-balls 1s linear .99s infinite;animation:pacman-balls 1s linear .99s infinite}.loading-image div:first-of-type{width:0;height:0;border:25px solid #49b1f5;border-right-color:transparent;border-radius:25px;-webkit-animation:rotate_pacman_half_up .5s 0s infinite;animation:rotate_pacman_half_up .5s 0s infinite}.loading-image div:nth-child(2){width:0;height:0;border:25px solid #49b1f5;border-right-color:transparent;border-radius:25px;-webkit-animation:rotate_pacman_half_down .5s 0s infinite;animation:rotate_pacman_half_down .5s 0s infinite;margin-top:-50px}@-webkit-keyframes rotate_pacman_half_up{0%{transform:rotate(270deg)}50%{transform:rotate(1turn)}to{transform:rotate(270deg)}}@keyframes rotate_pacman_half_up{0%{transform:rotate(270deg)}50%{transform:rotate(1turn)}to{transform:rotate(270deg)}}@-webkit-keyframes rotate_pacman_half_down{0%{transform:rotate(90deg)}50%{transform:rotate(0)}to{transform:rotate(90deg)}}@keyframes rotate_pacman_half_down{0%{transform:rotate(90deg)}50%{transform:rotate(0)}to{transform:rotate(90deg)}}@-webkit-keyframes pacman-balls{75%{opacity:.7}to{transform:translate(-100px,-6.25px)}}@keyframes pacman-balls{75%{opacity:.7}to{transform:translate(-100px,-6.25px)}}.loading-image div:nth-child(3),.loading-image div:nth-child(4),.loading-image div:nth-child(5),.loading-image div:nth-child(6){background-color:#49b1f5;width:15px;height:15px;border-radius:100%;margin:2px;width:10px;height:10px;position:absolute;transform:translateY(-6.25px);top:25px;left:100px}.loading-text{margin-bottom:20vh;text-align:center;color:#2c3e50;font-size:2rem;box-sizing:border-box;padding:0 10px;text-shadow:0 2px 10px rgba(0,0,0,.2)}@media only screen and (max-width:500px){.loading-text{font-size:1.5rem}}.fadeout{opacity:0}@-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0)}}</style><script>(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()</script><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="阿顺" type="application/atom+xml">
+</head><style>body{background-image:url(https://cdn.jsdelivr.net/gh/ashunun/Picture/img/科幻少女绊爱酱.jpg);background-repeat:no-repeat;background-size:cover;background-attachment:fixed}</style><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/noSomeKey.js"></script><script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest/disable-devtool.min.js" disable-menu="false"></script><div id="loading-container"><p class="loading-text">玩命加载中 . . .</p><div class="loading-image"><div></div><div></div><div></div><div></div><div></div></div></div><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><div><img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">阿顺</span></div></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom:.6"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fas fa-tags" style="zoom:.6"></i> <span>标签</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-bookmark" style="zoom:.6"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom:.6"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom:.6"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom:.6"></i> <span>友情链接</span></a></li><li class="hide-on-med-and-down nav-item"><a href="" class="waves-effect waves-light"><i class="fas fa-list" style="zoom:.6"></i> <span>Medias</span> <i class="fas fa-chevron-down" aria-hidden="true" style="zoom:.6"></i></a><ul class="sub-nav menus_item_child"><li><a href="/musics"><i class="fas fa-music" style="margin-top:-20px;zoom:.6"></i> <span>Musics</span></a></li><li><a href="/movies"><i class="fas fa-film" style="margin-top:-20px;zoom:.6"></i> <span>Movies</span></a></li><li><a href="/books"><i class="fas fa-book" style="margin-top:-20px;zoom:.6"></i> <span>Books</span></a></li><li><a href="/gallery"><i class="fas fa-image" style="margin-top:-20px;zoom:.6"></i> <span>Galleries</span></a></li></ul></li><li class="hide-on-med-and-down nav-item"><a href="" class="waves-effect waves-light"><i class="fas fa-toolbox" style="zoom:.6"></i> <span>Tool</span> <i class="fas fa-chevron-down" aria-hidden="true" style="zoom:.6"></i></a><ul class="sub-nav menus_item_child"><li><a href="/agent"><i class="fas fa-user-secret" style="margin-top:-20px;zoom:.6"></i> <span>Agent</span></a></li><li><a href="/navigate"><i class="fas fa-location-arrow" style="margin-top:-20px;zoom:.6"></i> <span>Navigate</span></a></li><li><a href="/api"><i class="fas fa-robot" style="margin-top:-20px;zoom:.6"></i> <span>Api</span></a></li><li><a href="/mac"><i class="fab fa-windows" style="margin-top:-20px;zoom:.6"></i> <span>Mac软件</span></a></li></ul></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom:.85"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">阿顺</div><div class="logo-desc">本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fa-fw fas fa-tags"></i> 标签</a></li><li class="m-nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa-fw fas fa-bookmark"></i> 分类</a></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友情链接</a></li><li class="m-nav-item"><a href="javascript:;"><i class="fa-fw fas fa-list"></i> Medias <span class="m-icon"><i class="fas fa-chevron-right"></i></span></a><ul><li><a href="/musics" style="margin-left:75px"><i class="fa fas fa-music" style="position:absolute;left:50px"></i> <span>Musics</span></a></li><li><a href="/movies" style="margin-left:75px"><i class="fa fas fa-film" style="position:absolute;left:50px"></i> <span>Movies</span></a></li><li><a href="/books" style="margin-left:75px"><i class="fa fas fa-book" style="position:absolute;left:50px"></i> <span>Books</span></a></li><li><a href="/gallery" style="margin-left:75px"><i class="fa fas fa-image" style="position:absolute;left:50px"></i> <span>Galleries</span></a></li></ul></li><li class="m-nav-item"><a href="javascript:;"><i class="fa-fw fas fa-toolbox"></i> Tool <span class="m-icon"><i class="fas fa-chevron-right"></i></span></a><ul><li><a href="/agent" style="margin-left:75px"><i class="fa fas fa-user-secret" style="position:absolute;left:50px"></i> <span>Agent</span></a></li><li><a href="/navigate" style="margin-left:75px"><i class="fa fas fa-location-arrow" style="position:absolute;left:50px"></i> <span>Navigate</span></a></li><li><a href="/api" style="margin-left:75px"><i class="fa fas fa-robot" style="position:absolute;left:50px"></i> <span>Api</span></a></li><li><a href="/mac" style="margin-left:75px"><i class="fa fab fa-windows" style="position:absolute;left:50px"></i> <span>Mac软件</span></a></li></ul></li></ul></div></div></nav></header><script src="/libs/cryptojs/crypto-js.min.js"></script><script>(function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();</script><div class="bg-cover pd-header post-cover" style="background-image:url('https://cdn.jsdelivr.net/gh/ashunun/Picture/img/二次元少女 可爱猫耳 萌 电脑 绘画 创作 动漫壁纸.jpg')"><div class="container" style="right:0;left:0"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">Git-Github</h1></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{width:345px;padding-left:20px;background-color:rgb(255,255,255,.7)!important;border-radius:10px;box-shadow:0 10px 35px 2px rgba(0,0,0,.15),0 5px 15px rgba(0,0,0,.07),0 2px 5px -5px rgba(0,0,0,.1)!important}.toc-widget .toc-title{padding:35px 0 15px 17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content{padding-bottom:30px;height:calc(100vh - 250px);overflow:auto}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#f0f;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px;position:absolute;right:23.5vw;display:block}#toc-content .is-active-link{color:#f0f}#floating-toc-btn{position:fixed;right:15px;bottom:76px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:48px;height:48px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.4rem}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"><a href="/tags/Gie/"><span class="chip bg-color">Gie</span> </a><a href="/tags/Github/"><span class="chip bg-color">Github</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/Tutorial/" class="post-category">Tutorial</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp; 2021-10-01</div><div class="post-date info-break-policy"><i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp; 2022-03-06</div><div class="info-break-policy"><i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp; 11 分</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp; <span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><h4 id="一-Git（重点）"><a href="#一-Git（重点）" class="headerlink" title="一 Git（重点）"></a>一 Git（重点）</h4><h5 id="1-git是什么？"><a href="#1-git是什么？" class="headerlink" title="1  git是什么？"></a>1 git是什么？</h5><pre class="language-jsx"><code class="language-jsx">git是目前世界上最先进的分布式版本控制工具（没有之一）。
+git由什么特点<span class="token operator">?</span>
+
+什么是版本控制工具<span class="token operator">?</span>
+说白了就是帮助我们管理不同版本的文件的一个应用程序。
+</code></pre><h5 id="2-git诞生"><a href="#2-git诞生" class="headerlink" title="2 git诞生"></a>2 git诞生</h5><pre class="language-jsx"><code class="language-jsx"><span class="token number">2002</span>年之前，linus自己手动维护linux的版本代码
+<span class="token number">2002</span>之后到<span class="token number">2005</span>年，使用的免费的bitkeeper
+<span class="token number">2005</span>年之后，linus开发git
+</code></pre><h5 id="3-集中型版本控制工具和分布式版本控制工具"><a href="#3-集中型版本控制工具和分布式版本控制工具" class="headerlink" title="3 集中型版本控制工具和分布式版本控制工具"></a>3 集中型版本控制工具和分布式版本控制工具</h5><h6 id="3-1-集中型的版本控制工具"><a href="#3-1-集中型的版本控制工具" class="headerlink" title="3.1  集中型的版本控制工具"></a>3.1 集中型的版本控制工具</h6><pre class="language-jsx"><code class="language-jsx">svn<span class="token punctuation">,</span>cvs<span class="token punctuation">,</span>vss
+特点：
+<span class="token number">1</span><span class="token punctuation">.</span> 实现大部分开发中对版本管理的需求
+<span class="token number">2</span><span class="token punctuation">.</span> 结构很简单，上手容易
+缺点：
+<span class="token number">1</span><span class="token punctuation">.</span> 对中央仓库依赖严重，一旦损坏了，历史数据怎么恢复？
+<span class="token number">2</span><span class="token punctuation">.</span> 程序员上传的都是完整版，如何追溯查询？
+<span class="token number">3</span><span class="token punctuation">.</span> 系统正在上线运行，需要修改bug或增加几个不同的功能，持续几个月的时间。如何同时管理几个版本
+<span class="token number">4</span><span class="token punctuation">.</span> 如果管理一个分布在世界上各地且互不相识的大型开发团队
+</code></pre><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/012.png"></p><h6 id="3-2-分布式版本控制工具"><a href="#3-2-分布式版本控制工具" class="headerlink" title="3.2 分布式版本控制工具"></a>3.2 分布式版本控制工具</h6><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/013.png"></p><h5 id="4-git的作用"><a href="#4-git的作用" class="headerlink" title="4 git的作用"></a>4 git的作用</h5><pre class="language-jsx"><code class="language-jsx"><span class="token number">1</span><span class="token punctuation">.</span> 协同开发
+<span class="token number">2</span><span class="token punctuation">.</span> 版本记录
+<span class="token number">3</span><span class="token punctuation">.</span> 冲突解决
+<span class="token number">4</span><span class="token punctuation">.</span> 历史追查
+<span class="token number">5</span><span class="token punctuation">.</span> 代码备份
+<span class="token number">6</span><span class="token punctuation">.</span> 版本还原
+<span class="token number">7</span><span class="token punctuation">.</span> 权限管理
+<span class="token number">8</span><span class="token punctuation">.</span> 分支管理
+<span class="token number">9</span><span class="token punctuation">.</span> 代码审查
+<span class="token operator">...</span>
+</code></pre><h5 id="5-git安装"><a href="#5-git安装" class="headerlink" title="5 git安装"></a>5 git安装</h5><pre class="language-jsx"><code class="language-jsx">    最早的git是在linux上开发的，很长一段时间中，git只能在linux和unix上运行。不过，后来有人把他一直到windows平台。现在git可以在linux、unix、mac os和windows几个主流平台运行。
+    要使用git，第一步当然是安装。在windows安装
+</code></pre><h6 id="5-1-在windows中安装git"><a href="#5-1-在windows中安装git" class="headerlink" title="5.1 在windows中安装git"></a>5.1 在windows中安装git</h6><pre class="language-jsx"><code class="language-jsx"><span class="token number">1</span><span class="token punctuation">.</span> 命令行工具：git <span class="token keyword">for</span> <span class="token function">windows</span><span class="token punctuation">(</span>重点<span class="token punctuation">)</span>
+https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>git<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">-</span>windows<span class="token punctuation">.</span>github<span class="token punctuation">.</span>io<span class="token operator">/</span><span class="token number">1</span>
+tip<span class="token punctuation">:</span>
+点击安装包，然后傻瓜式的安装就可以成功
+
+<span class="token number">2</span><span class="token punctuation">.</span> 可视化工具：TortoiseGit
+https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>tortoisegit<span class="token punctuation">.</span>org
+
+<span class="token number">3</span><span class="token punctuation">.</span> <span class="token function">idea插件</span><span class="token punctuation">(</span>掌握<span class="token punctuation">)</span>
+
+<span class="token number">4</span><span class="token punctuation">.</span> <span class="token function">github网站</span><span class="token punctuation">(</span>掌握<span class="token punctuation">)</span>
+http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>github<span class="token punctuation">.</span>com
+</code></pre><h5 id="6-配置git签名"><a href="#6-配置git签名" class="headerlink" title="6 配置git签名"></a>6 配置git签名</h5><h6 id="6-1-第一步"><a href="#6-1-第一步" class="headerlink" title="6.1 第一步"></a>6.1 第一步</h6><pre class="language-jsx"><code class="language-jsx">选中你要作为git工程存放的目录，然后单击鼠标右键选择git bash即可。
+
+tip<span class="token punctuation">:</span>
+git是分布式版本控制工具，所以我们需要填写用户名和邮箱作为一个标志。
+C<span class="token punctuation">:</span>\Users\lixi19861125路径下<span class="token punctuation">.</span>gitconfig文件，这个我文件里面可以看到<span class="token operator">--</span>global属性，所有的git项目都会公用这个属性
+
+git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>name <span class="token string">"lixi"</span>
+git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>email <span class="token string">"lixi@1000phone.com"</span>
+</code></pre><h5 id="7-创建版本库"><a href="#7-创建版本库" class="headerlink" title="7 创建版本库"></a>7 创建版本库</h5><h6 id="7-1-第一步-选中一个的git工程的目录"><a href="#7-1-第一步-选中一个的git工程的目录" class="headerlink" title="7.1 第一步 选中一个的git工程的目录"></a>7.1 第一步 选中一个的git工程的目录</h6><h6 id="7-2-第二步-输入命令初始化版本库"><a href="#7-2-第二步-输入命令初始化版本库" class="headerlink" title="7.2 第二步 输入命令初始化版本库"></a>7.2 第二步 输入命令初始化版本库</h6><pre class="language-jsx"><code class="language-jsx">git init
+</code></pre><h5 id="8-git命令行操作"><a href="#8-git命令行操作" class="headerlink" title="8 git命令行操作"></a>8 git命令行操作</h5><h6 id="8-1-查看文件状态"><a href="#8-1-查看文件状态" class="headerlink" title="8.1 查看文件状态"></a>8.1 查看文件状态</h6><pre class="language-jsx"><code class="language-jsx">git status
+</code></pre><h6 id="8-2-将文件-目录添加到临时暂存区"><a href="#8-2-将文件-目录添加到临时暂存区" class="headerlink" title="8.2 将文件/目录添加到临时暂存区"></a>8.2 将文件/目录添加到临时暂存区</h6><pre class="language-jsx"><code class="language-jsx">git add 文件名<span class="token operator">/</span>目录名
+e<span class="token punctuation">.</span>g<span class="token punctuation">.</span>
+git add src<span class="token operator">/</span>HelloWorld<span class="token punctuation">.</span>java
+
+tip<span class="token punctuation">:</span>
+以上通过git add命令的文件会提交到暂存区中，但是这里的文件其实没有真正的提交。使用下一个命令才是把他提交到一个统一的版本文件
+</code></pre><h6 id="8-3-提交文件"><a href="#8-3-提交文件" class="headerlink" title="8.3 提交文件"></a>8.3 提交文件</h6><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> commit
+
+【进入liunx界面
+    编辑：i
+    退出：Esc
+    保存：shift+；
+          输入：wq
+                Enter
+】
+
+e.g.
+<span class="token function">git</span> commit -m <span class="token string">"提交提示信息"</span>
+
+tip:
+每当有文件被修改/添加/删除的时候，都需要重新git add *，然后再git commit
+</code></pre><h6 id="8-4-查看日志"><a href="#8-4-查看日志" class="headerlink" title="8.4 查看日志"></a>8.4 查看日志</h6><pre class="language-jsx"><code class="language-jsx">git log <span class="token punctuation">:</span> 查看历史记录
+
+e<span class="token punctuation">.</span>g<span class="token punctuation">.</span>
+$ git log
+
+
+commit 29df21765ff605e8f204417f9251c410f88563b0
+Author<span class="token punctuation">:</span> lixi <span class="token operator">&lt;</span>lixi@1000phone<span class="token punctuation">.</span>com<span class="token operator">></span>
+Date<span class="token punctuation">:</span>   Mon Mar <span class="token number">9</span> <span class="token number">15</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">:</span><span class="token number">55</span> <span class="token number">2020</span> <span class="token operator">+</span><span class="token number">0800</span>
+
+    update <span class="token number">002</span>
+
+commit 76551c4baf66d295d26a2798fe5ff8ca3e827f4a
+Author<span class="token punctuation">:</span> lixi <span class="token operator">&lt;</span>lixi@1000phone<span class="token punctuation">.</span>com<span class="token operator">></span>
+Date<span class="token punctuation">:</span>   Mon Mar <span class="token number">9</span> <span class="token number">15</span><span class="token punctuation">:</span><span class="token number">04</span><span class="token punctuation">:</span><span class="token number">25</span> <span class="token number">2020</span> <span class="token operator">+</span><span class="token number">0800</span>
+
+    create <span class="token number">001</span>
+
+e<span class="token punctuation">.</span>g<span class="token punctuation">.</span>
+简洁模式：$ git log <span class="token operator">--</span>pretty<span class="token operator">=</span>oneline
+29df21765ff605e8f204417f9251c410f88563b0 update <span class="token number">002</span>
+76551c4baf66d295d26a2798fe5ff8ca3e827f4a create <span class="token number">001</span>
+</code></pre><h6 id="8-5-回退历史"><a href="#8-5-回退历史" class="headerlink" title="8.5 回退历史"></a>8.5 回退历史</h6><p>8.5.1 创建一个文件 : a.txt</p><pre class="language-jsx"><code class="language-jsx">aaaaaaaaaaaaa
+bbbbbbbbbbbbb
+ccccccccccccc
+ddddddddddddd
+
+tip<span class="token punctuation">:</span>
+添加到暂存区然后提交
+</code></pre><p>8.5.2 修改这个文件：a.txt</p><pre class="language-jsx"><code class="language-jsx">aaaaaaaaaaaaa
+ccccccccccccc
+eeeeeeeeeeeee
+
+tip<span class="token punctuation">:</span>
+添加到暂存区然后提交
+</code></pre><p>8.5.3 回退到上一次提交</p><pre class="language-jsx"><code class="language-jsx">git reset <span class="token operator">--</span>hard HEAD<span class="token operator">^</span><span class="token number">1</span>
+
+tip<span class="token punctuation">:</span>
+HEAD是一个指针，永远指向最新版本，<span class="token operator">^</span><span class="token number">1</span>表示让HEAD指针指向上一个版本
+
+<span class="token operator">--</span>hard 硬<span class="token punctuation">:</span>这种回顾不但将版本回顾，还会将指定的数据抹除。不会保留任何你修改的记录
+<span class="token operator">--</span>soft 软<span class="token punctuation">:</span>回退版本，也会保留改动的记录。会自动帮你git add。
+<span class="token operator">--</span>mix 折中<span class="token punctuation">:</span>回退版本，并会保留所有改动记录。但是不会自动帮你git add
+
+git reset <span class="token punctuation">:</span> 修改HEAD的位置
+
+这种方式可以恢复到之前某个提交的版本，但是恢复之后，当前版本之后的版本将不复存在。
+</code></pre><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/014.png"></p><p>8.5.4 回退到多个版本</p><pre class="language-jsx"><code class="language-jsx">git reset <span class="token operator">--</span>hard HEAD<span class="token operator">~</span><span class="token number">2</span> #回退到<span class="token number">2</span>个版本之前的版本
+</code></pre><p>8.5.5 版本穿越</p><pre class="language-heml"><code class="language-heml">git reflog # 查看历史记录的版本号
+
+e.g.
+$ git reflog
+29df217 HEAD@{0}: reset: moving to HEAD~2
+8938885 HEAD@{1}: reset: moving to HEAD^1
+7c77ab0 HEAD@{2}: commit: update 004
+8938885 HEAD@{3}: commit: update 003
+c07b56d HEAD@{4}: commit: update 003
+29df217 HEAD@{5}: commit: update 002
+76551c4 HEAD@{6}: commit (initial): create 001
+
+e.g.
+git reset --hard 7c77ab0
+</code></pre><h6 id="8-6-还原文件"><a href="#8-6-还原文件" class="headerlink" title="8.6 还原文件"></a>8.6 还原文件</h6><pre class="language-jsx"><code class="language-jsx">git checkout 文件名
+
+e<span class="token punctuation">.</span>g<span class="token punctuation">.</span>
+vi src<span class="token operator">/</span>b<span class="token punctuation">.</span>txt
+<span class="token number">111111111</span>
+<span class="token number">222222222</span>
+<span class="token number">333333333</span>
+<span class="token number">444444444</span>
+
+git add src<span class="token operator">/</span>b<span class="token punctuation">.</span>txt
+git commit <span class="token operator">-</span>m <span class="token string">"update 005"</span>
+
+修改 b<span class="token punctuation">.</span>txt
+<span class="token number">111111111</span>
+<span class="token number">222222222</span>
+<span class="token number">333333333</span>
+<span class="token number">444444444</span>
+<span class="token number">555555555</span>
+<span class="token number">666666666</span>
+
+git checkout src<span class="token operator">/</span>b<span class="token punctuation">.</span>txt
+</code></pre><h6 id="8-7-删除文件"><a href="#8-7-删除文件" class="headerlink" title="8.7 删除文件"></a>8.7 删除文件</h6><pre class="language-jsx"><code class="language-jsx"><span class="token number">1</span><span class="token punctuation">.</span> 先删除文件
+<span class="token number">2</span><span class="token punctuation">.</span> git add
+<span class="token number">3</span><span class="token punctuation">.</span> git commit
+
+
+再还原本文件：git reset <span class="token operator">--</span>hard <span class="token operator">+</span>id号<span class="token operator">/</span>b64b26f
+</code></pre><h5 id="9-工作区、暂存区、本地库"><a href="#9-工作区、暂存区、本地库" class="headerlink" title="9 工作区、暂存区、本地库"></a>9 工作区、暂存区、本地库</h5><h6 id="9-1-概念"><a href="#9-1-概念" class="headerlink" title="9.1 概念"></a>9.1 概念</h6><pre class="language-jsx"><code class="language-jsx"><span class="token function">工作区</span><span class="token punctuation">(</span>Working Directory<span class="token punctuation">)</span> <span class="token punctuation">:</span> 电脑的本地磁盘目录
+<span class="token function">本地库</span><span class="token punctuation">(</span>Repostory<span class="token punctuation">)</span> <span class="token punctuation">:</span> 工作区中有一个因此目录<span class="token punctuation">.</span>git，它就是git的本地版本库
+<span class="token function">暂存区</span><span class="token punctuation">(</span>stage<span class="token punctuation">)</span> <span class="token punctuation">:</span> 一般存储再git目录下的index文件，所以我们把暂存区有时候也叫做索引。
+</code></pre><h6 id="9-2-关系图"><a href="#9-2-关系图" class="headerlink" title="9.2 关系图"></a>9.2 关系图</h6><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/015.png"></p><h5 id="10-分支"><a href="#10-分支" class="headerlink" title="10 分支"></a>10 分支</h5><h6 id="10-1-分支概念"><a href="#10-1-分支概念" class="headerlink" title="10.1 分支概念"></a>10.1 分支概念</h6><pre class="language-jsx"><code class="language-jsx">项目已经上线了，但是产品精力又提出了新的需求，评估实现这个新功能需要<span class="token number">2</span>个月的时就按。但是项目还是需要同时上线运行，时不时修改bug，如何管理这几个版本。
+</code></pre><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/016.png"></p><h6 id="10-2-查看分支"><a href="#10-2-查看分支" class="headerlink" title="10.2 查看分支"></a>10.2 查看分支</h6><pre class="language-jsx"><code class="language-jsx">git branch <span class="token operator">-</span>v
+
+e<span class="token punctuation">.</span>g<span class="token punctuation">.</span>
+$ git branch <span class="token operator">-</span>v
+<span class="token operator">*</span> master b94d274 update <span class="token number">006</span>
+
+删除分支：
+git branch <span class="token operator">-</span>d <span class="token operator">+</span>分支名称
+</code></pre><h6 id="10-3-创建分支"><a href="#10-3-创建分支" class="headerlink" title="10.3 创建分支"></a>10.3 创建分支</h6><pre class="language-jsx"><code class="language-jsx">git branch 分支名称
+e<span class="token punctuation">.</span>g<span class="token punctuation">.</span>
+$ git branch common
+$ git branch <span class="token operator">-</span>v
+  common b94d274 update <span class="token number">006</span>
+<span class="token operator">*</span> master b94d274 update <span class="token number">006</span>
+</code></pre><h6 id="10-4-切换分支"><a href="#10-4-切换分支" class="headerlink" title="10.4 切换分支"></a>10.4 切换分支</h6><pre class="language-jsx"><code class="language-jsx">git checkout 分支名
+
+e<span class="token punctuation">.</span>g<span class="token punctuation">.</span>
+git checkout common
+</code></pre><h6 id="10-5-合并分支（将其他分支合并到主分支：master）"><a href="#10-5-合并分支（将其他分支合并到主分支：master）" class="headerlink" title="10.5 合并分支（将其他分支合并到主分支：master）"></a>10.5 合并分支（将其他分支合并到主分支：master）</h6><pre class="language-jsx"><code class="language-jsx"><span class="token number">1</span><span class="token punctuation">.</span> 切换到主分支
+git checkout master
+
+<span class="token number">2</span><span class="token punctuation">.</span> 合并
+git merge 分支名
+e<span class="token punctuation">.</span>g<span class="token punctuation">.</span>
+
+git merge common
+</code></pre><h5 id="11-冲突"><a href="#11-冲突" class="headerlink" title="11 冲突"></a>11 冲突</h5><h6 id="11-1-什么是冲突"><a href="#11-1-什么是冲突" class="headerlink" title="11.1 什么是冲突"></a>11.1 什么是冲突</h6><pre class="language-jsx"><code class="language-jsx">冲突一般是指同一个文件同一位置的代码，再两种版本的仓库合并时，版本的管理软件无法判断到底应该保留哪一个版本，因此会提示该文件发生冲突，冲突一般都需要程序员手动解决。
+</code></pre><h6 id="11-2-在分支合并的时候解决冲突"><a href="#11-2-在分支合并的时候解决冲突" class="headerlink" title="11.2  在分支合并的时候解决冲突"></a>11.2 在分支合并的时候解决冲突</h6><pre class="language-jsx"><code class="language-jsx"><span class="token number">1</span><span class="token punctuation">.</span> 先在master分支上创建一个luosenhan<span class="token punctuation">.</span>txt
+<span class="token number">2</span><span class="token punctuation">.</span> 再在common分支上创建一个luosenhan<span class="token punctuation">.</span>txt
+<span class="token number">3</span><span class="token punctuation">.</span> 分别提交
+<span class="token number">4</span><span class="token punctuation">.</span> 最后合并
+
+e<span class="token punctuation">.</span>g<span class="token punctuation">.</span>
+$ git merge common
+Auto<span class="token operator">-</span>merging src<span class="token operator">/</span>luosenhan<span class="token punctuation">.</span>txt
+CONFLICT <span class="token punctuation">(</span>add<span class="token operator">/</span>add<span class="token punctuation">)</span><span class="token punctuation">:</span> Merge conflict <span class="token keyword">in</span> src<span class="token operator">/</span>luosenhan<span class="token punctuation">.</span>txt
+Automatic merge failed<span class="token punctuation">;</span> fix conflicts and then commit the result<span class="token punctuation">.</span>
+
+<span class="token number">5</span><span class="token punctuation">.</span> 查看冲突
+git diff
+
+$ git diff
+diff <span class="token operator">--</span>cc src<span class="token operator">/</span>luosenhan<span class="token punctuation">.</span>txt
+index 7d8fefb<span class="token punctuation">,</span>9f9848c<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">0000000</span>
+<span class="token operator">--</span><span class="token operator">-</span> a<span class="token operator">/</span>src<span class="token operator">/</span>luosenhan<span class="token punctuation">.</span>txt
+<span class="token operator">++</span><span class="token operator">+</span> b<span class="token operator">/</span>src<span class="token operator">/</span>luosenhan<span class="token punctuation">.</span>txt
+@@@ <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span> <span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">8</span> @@@
+<span class="token operator">++</span><span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token operator">&lt;</span> HEAD
+ <span class="token operator">+</span><span class="token number">11111111111111111</span>
+ <span class="token operator">+</span><span class="token number">22222222222222222</span>
+<span class="token operator">-</span> <span class="token number">33333333333333333</span>
+<span class="token operator">++</span><span class="token number">33333333333333333</span>
+<span class="token operator">++</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">=</span>
+<span class="token operator">+</span> <span class="token number">222222222222222</span>
+ <span class="token operator">-</span><span class="token number">333333333333333</span>
+<span class="token operator">++</span><span class="token number">333333333333333</span>
+<span class="token operator">++</span><span class="token operator">></span><span class="token operator">></span><span class="token operator">></span><span class="token operator">></span><span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> common
+<span class="token number">6</span><span class="token punctuation">.</span> 解决冲突：切换到哪个目录，然后查看文件
+<span class="token number">7</span><span class="token punctuation">.</span> 再重新add和commit即可
+</code></pre><h4 id="二-GitHub-重点"><a href="#二-GitHub-重点" class="headerlink" title="二 GitHub(重点)"></a>二 GitHub(重点)</h4><h5 id="1-什么是github？"><a href="#1-什么是github？" class="headerlink" title="1 什么是github？"></a>1 什么是github？</h5><pre class="language-jsx"><code class="language-jsx">github是一个git项目托管网站，主要提供基于git的版本托管服务。
+网址：https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com
+
+注册账号的注意事项
+<span class="token operator">-</span> 不要使用<span class="token number">163</span>邮箱，有可能收不到校验邮件。
+<span class="token operator">-</span> 较长时间不适用，有可能被github冻结账号。
+<span class="token operator">-</span> 如果冻结账号，请登录https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>contact恢复申请
+</code></pre><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/017.png"></p><h5 id="2-GitHub操作"><a href="#2-GitHub操作" class="headerlink" title="2 GitHub操作"></a>2 GitHub操作</h5><h6 id="2-1-建立本地仓库"><a href="#2-1-建立本地仓库" class="headerlink" title="2.1 建立本地仓库"></a>2.1 建立本地仓库</h6><pre class="language-jsx"><code class="language-jsx"><span class="token number">1</span><span class="token punctuation">.</span> 创建guojing和huangrong子目录
+<span class="token number">2</span><span class="token punctuation">.</span> 搭建代码库
+git init
+git config user<span class="token punctuation">.</span>name <span class="token string">"huangrong"</span>
+git config user<span class="token punctuation">.</span>email <span class="token string">"lixi19861125@qq.com"</span>
+
+<span class="token number">3</span><span class="token punctuation">.</span> 提交代码
+git add
+git commit
+</code></pre><h6 id="2-2-注册github账号并登录"><a href="#2-2-注册github账号并登录" class="headerlink" title="2.2 注册github账号并登录"></a>2.2 注册github账号并登录</h6><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/018.png"></p><h6 id="2-3-创建github的项目库"><a href="#2-3-创建github的项目库" class="headerlink" title="2.3 创建github的项目库"></a>2.3 创建github的项目库</h6><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/019.png"></p><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/020.png"></p><h6 id="2-4-推送代码到git"><a href="#2-4-推送代码到git" class="headerlink" title="2.4 推送代码到git"></a>2.4 推送代码到git</h6><ul><li>增加远程地址</li></ul><pre class="language-jsx"><code class="language-jsx">git remote add <span class="token operator">&lt;</span>远端代号<span class="token operator">></span> <span class="token operator">&lt;</span>远端地址<span class="token operator">></span>
+<span class="token operator">&lt;</span>远端代号<span class="token operator">></span> ：指远程链接的代号，一般直接用origin做代号，也可以自定义 
+<span class="token operator">&lt;</span>远端地址<span class="token operator">></span> ：指远程链接的url
+
+e<span class="token punctuation">.</span>g<span class="token punctuation">.</span>
+git remote add origin https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>rocklee86<span class="token operator">/</span>kongfu<span class="token punctuation">.</span>git
+</code></pre><ul><li>推送到远程库</li></ul><pre class="language-jsx"><code class="language-jsx">git push <span class="token operator">&lt;</span>远端代号<span class="token operator">></span> <span class="token operator">&lt;</span>分支名<span class="token operator">></span>
+
+e<span class="token punctuation">.</span>g<span class="token punctuation">.</span>
+git push origin master
+</code></pre><h6 id="2-5-下载GitHub上的库"><a href="#2-5-下载GitHub上的库" class="headerlink" title="2.5 下载GitHub上的库"></a>2.5 下载GitHub上的库</h6><ul><li>从GitHub上克隆（guojing）</li></ul><pre class="language-jsx"><code class="language-jsx">git clone <span class="token operator">&lt;</span>远端地址<span class="token operator">></span> <span class="token operator">&lt;</span>项目的目录名<span class="token operator">></span>
+<span class="token operator">&lt;</span>项目的目录名<span class="token operator">></span> ： 指为克隆的项目在本地新建的一个目录名，可以不填，默认就是使用github仓库名
+
+e<span class="token punctuation">.</span>g<span class="token punctuation">.</span>
+git clone https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>rocklee86<span class="token operator">/</span>kongfu<span class="token punctuation">.</span>git kongfu
+</code></pre><ul><li>修改文件</li></ul><pre class="language-jsx"><code class="language-jsx">git push origin master
+
+<span class="token number">1</span><span class="token punctuation">.</span> 问题<span class="token number">1</span>：
+fatal<span class="token punctuation">:</span> <span class="token string">'origin'</span> does not appear to be a git repository
+fatal<span class="token punctuation">:</span> Could not read <span class="token keyword">from</span> remote repository<span class="token punctuation">.</span>
+
+Please make sure you have the correct access rights
+and the repository exists<span class="token punctuation">.</span>
+
+解决方案如下图：
+</code></pre><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/021.png"></p><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/022.png"></p><pre class="language-jsx"><code class="language-jsx">当黄蓉邀请了郭靖之后，郭靖用户的邮箱会接受到一份邀请的邮件，点击查看邀请会来到如下图<span class="token punctuation">:</span>
+</code></pre><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/023.png"></p><pre class="language-jsx"><code class="language-jsx">再次提交代码：
+git push origin master
+</code></pre><h6 id="2-6-huangrong用户同步更新代码"><a href="#2-6-huangrong用户同步更新代码" class="headerlink" title="2.6 huangrong用户同步更新代码"></a>2.6 huangrong用户同步更新代码</h6><ul><li>从github更新项目</li></ul><pre class="language-jsx"><code class="language-jsx">git pull <span class="token operator">&lt;</span>远程代码<span class="token operator">></span> <span class="token operator">&lt;</span>远程分支<span class="token operator">></span>
+
+e<span class="token punctuation">.</span>g<span class="token punctuation">.</span>
+git pull origin master
+</code></pre><h5 id="3-合作冲突"><a href="#3-合作冲突" class="headerlink" title="3 合作冲突"></a>3 合作冲突</h5><h6 id="3-1-什么是协作冲突"><a href="#3-1-什么是协作冲突" class="headerlink" title="3.1 什么是协作冲突"></a>3.1 什么是协作冲突</h6><pre class="language-jsx"><code class="language-jsx">    在上传或者同步代码时，由于你和他人都修改了同一文件的同一位置的代码，版本管理工具无法判断究竟以谁为准，这就会报告冲突，需要程序员手动解决。
+</code></pre><h6 id="3-2-解决方式"><a href="#3-2-解决方式" class="headerlink" title="3.2 解决方式"></a>3.2 解决方式</h6><pre class="language-jsx"><code class="language-jsx"><span class="token number">1</span><span class="token punctuation">.</span> 修改合并
+<span class="token number">2</span><span class="token punctuation">.</span> git add
+<span class="token number">3</span><span class="token punctuation">.</span> git commit
+</code></pre><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/024.png"></p><pre class="language-jsx"><code class="language-jsx"><span class="token number">1</span><span class="token punctuation">.</span> 在huangrong用户修改打狗棒法<span class="token punctuation">.</span>txt并提交
+<span class="token number">2</span><span class="token punctuation">.</span> 在guojing用户修改打狗棒法<span class="token punctuation">.</span>txt并提交
+</code></pre><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/025.png"></p><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/026.png"></p><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/027.png"></p><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/028.png"></p><h5 id="4-第三方团队参与场景"><a href="#4-第三方团队参与场景" class="headerlink" title="4 第三方团队参与场景"></a>4 第三方团队参与场景</h5><h6 id="4-1-画图分析"><a href="#4-1-画图分析" class="headerlink" title="4.1 画图分析"></a>4.1 画图分析</h6><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/029.png"></p><h6 id="4-2-操作测试"><a href="#4-2-操作测试" class="headerlink" title="4.2 操作测试"></a>4.2 操作测试</h6><pre class="language-jsx"><code class="language-jsx"><span class="token number">1</span><span class="token punctuation">.</span> 使用所谓的穆念慈用户（lixi86）fork出黄蓉对应的库
+<span class="token number">2</span><span class="token punctuation">.</span> 使用穆念慈用户修改fork出来的某个文件
+<span class="token number">3</span><span class="token punctuation">.</span> 然后查看如图
+<span class="token number">4</span><span class="token punctuation">.</span> 操作完成之后，项目管理者（黄蓉）就会收到一封同步请求的邮件
+</code></pre><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/030.png"></p><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/031.png"></p><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/032.png"></p><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/033.png"></p><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/image@main/img/1638545073388034.png"></p><h4 id="三-GitLab"><a href="#三-GitLab" class="headerlink" title="三 GitLab"></a>三 GitLab</h4><h6 id="5-1-什么是gitlab"><a href="#5-1-什么是gitlab" class="headerlink" title="5.1 什么是gitlab"></a>5.1 什么是gitlab</h6><pre class="language-jsx"><code class="language-jsx"><span class="token string">"自架私服版"</span>的github
+官网<span class="token punctuation">:</span>https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>about<span class="token punctuation">.</span>gitlab<span class="token punctuation">.</span>com
+下载网址<span class="token punctuation">:</span>https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>about<span class="token punctuation">.</span>gitlab<span class="token punctuation">.</span>com<span class="token operator">/</span>install
+</code></pre><h6 id="5-2-安装"><a href="#5-2-安装" class="headerlink" title="5.2 安装"></a>5.2 安装</h6><pre class="language-jsx"><code class="language-jsx"><span class="token number">1</span><span class="token punctuation">.</span> 下载依赖
+yum install <span class="token operator">-</span>y curl policycoreutils<span class="token operator">-</span>python openssh<span class="token operator">-</span>server cronie lokkit http ssh 
+
+<span class="token number">2</span><span class="token punctuation">.</span> 安装
+rpm <span class="token operator">-</span>ivh <span class="token operator">/</span>opt<span class="token operator">/</span>software<span class="token operator">/</span>gitlab<span class="token operator">-</span>ce<span class="token number">-11.9</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">-</span>ce<span class="token number">.0</span><span class="token punctuation">.</span>el6<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm
+
+<span class="token number">3</span><span class="token punctuation">.</span> 预配gitlab的组件
+gitlab<span class="token operator">-</span>ctl reconfigure
+
+<span class="token number">4</span><span class="token punctuation">.</span> 修改gitlab的配置url
+vi <span class="token operator">/</span>etc<span class="token operator">/</span>gitlab<span class="token operator">/</span>gitlab<span class="token punctuation">.</span>rb
+
+external_url <span class="token string">'http://gitlab.1000phone.com'</span>
+
+vi <span class="token operator">/</span>opt<span class="token operator">/</span>gitlab<span class="token operator">/</span>embedded<span class="token operator">/</span>service<span class="token operator">/</span>gitlab<span class="token operator">-</span>rails<span class="token operator">/</span>config<span class="token operator">/</span>gitlab<span class="token punctuation">.</span>yml
+
+host<span class="token punctuation">:</span> gitlab<span class="token punctuation">.</span>1000phone<span class="token punctuation">.</span>com
+port<span class="token punctuation">:</span> <span class="token number">80</span>
+https<span class="token punctuation">:</span> <span class="token boolean">false</span>
+
+<span class="token number">5</span><span class="token punctuation">.</span> 修改windows的hosts
+<span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">49.103</span> slave3 gitlab<span class="token punctuation">.</span>1000phone<span class="token punctuation">.</span>com
+</code></pre><h6 id="5-3-启动gitlab"><a href="#5-3-启动gitlab" class="headerlink" title="5.3 启动gitlab"></a>5.3 启动gitlab</h6><pre class="language-jsx"><code class="language-jsx">gitlab<span class="token operator">-</span>ctl start<span class="token operator">/</span>stop<span class="token operator">/</span>restart
+</code></pre><h4 id="四-idea整合git"><a href="#四-idea整合git" class="headerlink" title="四  idea整合git"></a>四 idea整合git</h4><h6 id="6-1-在github上创建一个库"><a href="#6-1-在github上创建一个库" class="headerlink" title="6.1 在github上创建一个库"></a>6.1 在github上创建一个库</h6><h6 id="6-2-打开idea，选择setting"><a href="#6-2-打开idea，选择setting" class="headerlink" title="6.2 打开idea，选择setting"></a>6.2 打开idea，选择setting</h6><pre class="language-jsx"><code class="language-jsx">settings <span class="token operator">--</span><span class="token operator">-</span><span class="token operator">></span> Version Control <span class="token operator">--</span><span class="token operator">-</span><span class="token operator">></span> Git
+</code></pre><h6 id="6-3-再选择github"><a href="#6-3-再选择github" class="headerlink" title="6.3 再选择github"></a>6.3 再选择github</h6><pre class="language-jsx"><code class="language-jsx"><span class="token number">1</span><span class="token punctuation">.</span> 需要现在github上生成授权令牌（token）
+https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>settings<span class="token operator">/</span>tokens<span class="token operator">/</span><span class="token keyword">new</span>
+
+<span class="token class-name">2<span class="token punctuation">.</span></span> 然后再将生成的令牌填入到idea的githup处即可
+<span class="token number">2.1</span> file <span class="token operator">--</span><span class="token operator">-</span><span class="token operator">></span> New <span class="token operator">--</span><span class="token operator">-</span><span class="token operator">></span> Project <span class="token keyword">from</span> Version Control <span class="token operator">--</span><span class="token operator">-</span><span class="token operator">></span> Git
+
+<span class="token number">3</span><span class="token punctuation">.</span> 如何想要上传的文件
+右键 <span class="token operator">--</span><span class="token operator">-</span><span class="token operator">></span> Git <span class="token operator">--</span><span class="token operator">-</span><span class="token operator">></span> add<span class="token operator">/</span>commit
+
+<span class="token number">4</span><span class="token punctuation">.</span> repostory <span class="token operator">--</span><span class="token operator">-</span><span class="token operator">></span> clone<span class="token operator">/</span>push<span class="token operator">/</span>pull
+
+<span class="token number">5</span><span class="token punctuation">.</span> 如果有冲突会自动提示，选择merge
+</code></pre><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css"><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></div><hr><div class="reprint" id="reprint-statement"><div class="reprint__author"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-user">文章作者: </i></span><span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">xiaoshun</a></span></div><div class="reprint__type"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-link">文章链接: </i></span><span class="reprint-info"><a href="https://ashun.tk/posts/f781.html">https://ashun.tk/posts/f781.html</a></span></div><div class="reprint__notice"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-copyright">版权声明: </i></span><span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">xiaoshun</a> !</span></div></div><script async defer>document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }</script><div class="tag_share" style="display:block"><div class="post-meta__tag-list" style="display:inline-block"><div class="article-tag"><a href="/tags/Gie/"><span class="chip bg-color">Gie</span> </a><a href="/tags/Github/"><span class="chip bg-color">Github</span></a></div></div><div class="post_share" style="zoom:80%;width:fit-content;display:inline-block;float:right;margin:-.15rem 0"><link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div><script src="/libs/share/js/social-share.min.js"></script></div></div></div><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.4rem;line-height:38px}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .close:hover{color:#ef5350;transform:scale(1.3);-moz-transform:scale(1.3);-webkit-transform:scale(1.3);-o-transform:scale(1.3)}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-content ul{padding-left:0!important}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{background-color:#ccc;color:#fff}.reward-tabs .wechat-tab .active{color:#fff!important;background-color:#22ab38!important}.reward-tabs .alipay-tab .active{color:#fff!important;background-color:#019fe8!important}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"><a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赏识是我前进的动力</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"><img src="/medias/loading.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"><img src="/medias/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script></div></div><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fas fa-chevron-left"></i>&nbsp;上一篇</div><div class="card"><a href="/posts/5242.html"><div class="card-image"><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/下午 趴在桌子的女孩 好看动漫插画人物壁纸.jpg" class="responsive-img" alt="设计师必备网站"> <span class="card-title">设计师必备网站</span></div></a><div class="card-content article-content"><div class="summary block-with-text">精品类 设计灵感 免费商用图片网址 电商网址 趣味网址 Icon 图标</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i>2021-10-29 </span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E8%B5%84%E6%BA%90%E7%BD%91%E7%AB%99/" class="post-category">资源网站</a></span></div></div><div class="card-action article-tags"><a href="/tags/resources/"><span class="chip bg-color">resources</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color">下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/posts/fef3.html"><div class="card-image"><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/netbian/bian/1545.jpg" class="responsive-img" alt="油箱大全"> <span class="card-title">油箱大全</span></div></a><div class="card-content article-content"><div class="summary block-with-text">临时邮箱 不会过期邮箱 国外邮箱 国内邮箱</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i>2021-09-28 </span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E8%B5%84%E6%BA%90%E7%BD%91%E7%AB%99/" class="post-category">资源网站</a></span></div></div><div class="card-action article-tags"><a href="/tags/resources/"><span class="chip bg-color">resources</span></a></div></div></div></div></article></div><script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script><script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script><script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script><script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget card" style="background-color:#fff"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="/libs/tocbot/tocbot.min.js"></script><script>$(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });</script></main><footer class="page-footer bg-color"><link rel="stylesheet" href="/libs/aplayer/APlayer.min.css"><style>.aplayer .aplayer-lrc p{display:none;font-size:12px;font-weight:700;line-height:16px!important}.aplayer .aplayer-lrc p.aplayer-lrc-current{display:none;font-size:15px;color:#42b983}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body{left:-66px!important}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover{left:0!important}</style><div><div class="row"><meting-js class="col l8 offset-l2 m10 offset-m1 s12" server="netease" type="playlist" id="2660651585" fixed="true" autoplay theme="#42b983" loop order="list" preload="auto" volume="0.7" list-folded="true"></meting-js></div></div><script src="/libs/aplayer/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><div class="container row center-align" style="margin-bottom:15px!important"><div class="col s12 m8 l8 copy-right">Copyright&nbsp;&copy; <span id="year">2019 </span><a href="/about" target="_blank">Ashun </a><span id="heartbeat" class="fa fas fa-heartbeat"></span><br><span id="binft"></span><br><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var binft=function(r){function n(t){for(var e=document.createDocumentFragment(),r=0;r<t;r++){var n=document.createElement("span");n.textContent=String.fromCharCode(94*Math.random()+33),n.style.color=d[Math.floor(Math.random()*d.length)],e.appendChild(n)}return e}var i="",l=["青青陵上柏，磊磊涧中石。","人生天地间，忽如远行客。","斗酒相娱乐，聊厚不为薄。","驱车策驽马，游戏宛与洛。","洛中何郁郁，冠带自相索。","长衢罗夹巷，王侯多第宅。","两宫遥相望，双阙百余尺。","极宴娱心意，戚戚何所迫？"].map(function(t){return t+""}),a=2,g=1,o=5,b=75,d=["rgb(110,64,170)","rgb(150,61,179)","rgb(191,60,175)","rgb(228,65,157)","rgb(254,75,131)","rgb(255,94,99)","rgb(255,120,71)","rgb(251,150,51)","rgb(226,183,47)","rgb(198,214,60)","rgb(175,240,91)","rgb(127,246,88)","rgb(82,246,103)","rgb(48,239,130)","rgb(29,223,163)","rgb(26,199,194)","rgb(35,171,216)","rgb(54,140,225)","rgb(76,110,219)","rgb(96,84,200)"],f={text:"",prefixP:-o,skillI:0,skillP:0,direction:"forward",delay:a,step:g};!function t(){var e=l[f.skillI];f.step?f.step--:(f.step=g,f.prefixP<i.length?(0<=f.prefixP&&(f.text+=i[f.prefixP]),f.prefixP++):"forward"===f.direction?f.skillP<e.length?(f.text+=e[f.skillP],f.skillP++):f.delay?f.delay--:(f.direction="backward",f.delay=a):0<f.skillP?(f.text=f.text.slice(0,-1),f.skillP--):(f.skillI=(f.skillI+1)%l.length,f.direction="forward")),r.textContent=f.text,r.appendChild(n(f.prefixP<i.length?Math.min(o,o+f.prefixP):Math.min(o,e.length-f.skillP))),setTimeout(t,b)}()};binft(document.getElementById("binft"))</script><script>var now=new Date;function createtime(){var n=new Date("03/08/2020 16:44:00");now.setTime(now.getTime()+250),days=(now-n)/1e3/60/60/24,dnum=Math.floor(days),hours=(now-n)/1e3/60/60-24*dnum,hnum=Math.floor(hours),1==String(hnum).length&&(hnum="0"+hnum),minutes=(now-n)/1e3/60-1440*dnum-60*hnum,mnum=Math.floor(minutes),1==String(mnum).length&&(mnum="0"+mnum),seconds=(now-n)/1e3-86400*dnum-3600*hnum-60*mnum,snum=Math.round(seconds),1==String(snum).length&&(snum="0"+snum),document.getElementById("timeDate").innerHTML="本站已安全运行 "+dnum+" 天 ",document.getElementById("times").innerHTML=hnum+" 小时 "+mnum+" 分 "+snum+" 秒"}setInterval("createtime()",250)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://t.ashun.gq" class="tooltipped" target="_blank" data-tooltip="访问我的Nav" data-position="top" data-delay="50"><i class="fas fa-location-arrow"></i> </a><a href="mailto:1322001816@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i> </a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1322001816" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1322001816" data-position="top" data-delay="50"><i class="fab fa-qq"></i> </a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script type="text/javascript">$(function(){!function(t,s,i){"use strict";$.ajax({url:t,dataType:"xml",success:function(t){var e=$("entry",t).map(function(){return{title:$("title",this).text(),content:$("content",this).text(),url:$("url",this).text()}}).get(),n=document.getElementById(s),r=document.getElementById(i);n.addEventListener("input",function(){var f='<ul class="search-result-list">',m=this.value.trim().toLowerCase().split(/[\s\-]+/);r.innerHTML="",this.value.trim().length<=0||(e.forEach(function(t){var n,e,r,s,i,l=!0,a=t.title.trim().toLowerCase(),c=t.content.trim().replace(/<[^>]+>/g,"").toLowerCase(),u=0===(u=t.url).indexOf("/")?t.url:"/"+u,o=-1,h=-1;""!==a&&""!==c&&m.forEach(function(t,e){n=a.indexOf(t),o=c.indexOf(t),n<0&&o<0?l=!1:(o<0&&(o=0),0===e&&(h=o))}),l&&(f+="<li><a href='"+u+"' class='search-result-title'>"+a+"</a>",e=t.content.trim().replace(/<[^>]+>/g,""),0<=h&&(s=h+80,(r=h-20)<0&&(r=0),0===r&&(s=100),s>e.length&&(s=e.length),i=e.substr(r,s),m.forEach(function(t){var e=new RegExp(t,"gi");i=i.replace(e,'<em class="search-keyword">'+t+"</em>")}),f+='<p class="search-result">'+i+"...</p>"),f+="</li>")}),f+="</ul>",r.innerHTML=f)})}})}("/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script src="/libs/others/clicklove.js" async></script><script async src="/libs/others/busuanzi.pure.mini.js"></script><script type="text/javascript" size="150" alpha="0.6" zindex="-1" src="/libs/background/ribbon.min.js" async></script><script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async></script><script src="/libs/instantpage/instantpage.js" type="module"></script><script src="/libs/materialize/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script><script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script type="text/javascript">var st,OriginTitile=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script><canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:1;pointer-events:none"></canvas><script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/clickBom.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"><script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script><script type="text/javascript">var windowWidth=$(window).width();768<windowWidth&&document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>')</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body></html>

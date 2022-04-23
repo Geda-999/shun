@@ -1,0 +1,994 @@
+<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="JavaScript初學者教學, zh-CN"><meta name="description" content="本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>JavaScript初學者教學 | 阿顺</title><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css"><link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css"><link rel="stylesheet" type="text/css" href="/libs/aos/aos.css"><link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css"><link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" type="text/css" href="/css/matery.css"><link rel="stylesheet" type="text/css" href="/css/my.css"><script src="/libs/jquery/jquery.min.js"></script><script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script><style type="text/css" lang="css">#loading-container{position:fixed;top:0;left:0;min-height:100vh;width:100vw;z-index:9999;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#fff;text-align:center;-webkit-transition:opacity 1s ease;-moz-transition:opacity 1s ease;-o-transition:opacity 1s ease;transition:opacity 1s ease}.loading-image{width:120px;height:50px;transform:translate(-50%)}.loading-image div:nth-child(2){-webkit-animation:pacman-balls 1s linear 0s infinite;animation:pacman-balls 1s linear 0s infinite}.loading-image div:nth-child(3){-webkit-animation:pacman-balls 1s linear .33s infinite;animation:pacman-balls 1s linear .33s infinite}.loading-image div:nth-child(4){-webkit-animation:pacman-balls 1s linear .66s infinite;animation:pacman-balls 1s linear .66s infinite}.loading-image div:nth-child(5){-webkit-animation:pacman-balls 1s linear .99s infinite;animation:pacman-balls 1s linear .99s infinite}.loading-image div:first-of-type{width:0;height:0;border:25px solid #49b1f5;border-right-color:transparent;border-radius:25px;-webkit-animation:rotate_pacman_half_up .5s 0s infinite;animation:rotate_pacman_half_up .5s 0s infinite}.loading-image div:nth-child(2){width:0;height:0;border:25px solid #49b1f5;border-right-color:transparent;border-radius:25px;-webkit-animation:rotate_pacman_half_down .5s 0s infinite;animation:rotate_pacman_half_down .5s 0s infinite;margin-top:-50px}@-webkit-keyframes rotate_pacman_half_up{0%{transform:rotate(270deg)}50%{transform:rotate(1turn)}to{transform:rotate(270deg)}}@keyframes rotate_pacman_half_up{0%{transform:rotate(270deg)}50%{transform:rotate(1turn)}to{transform:rotate(270deg)}}@-webkit-keyframes rotate_pacman_half_down{0%{transform:rotate(90deg)}50%{transform:rotate(0)}to{transform:rotate(90deg)}}@keyframes rotate_pacman_half_down{0%{transform:rotate(90deg)}50%{transform:rotate(0)}to{transform:rotate(90deg)}}@-webkit-keyframes pacman-balls{75%{opacity:.7}to{transform:translate(-100px,-6.25px)}}@keyframes pacman-balls{75%{opacity:.7}to{transform:translate(-100px,-6.25px)}}.loading-image div:nth-child(3),.loading-image div:nth-child(4),.loading-image div:nth-child(5),.loading-image div:nth-child(6){background-color:#49b1f5;width:15px;height:15px;border-radius:100%;margin:2px;width:10px;height:10px;position:absolute;transform:translateY(-6.25px);top:25px;left:100px}.loading-text{margin-bottom:20vh;text-align:center;color:#2c3e50;font-size:2rem;box-sizing:border-box;padding:0 10px;text-shadow:0 2px 10px rgba(0,0,0,.2)}@media only screen and (max-width:500px){.loading-text{font-size:1.5rem}}.fadeout{opacity:0}@-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0)}}</style><script>(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()</script><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="阿顺" type="application/atom+xml">
+</head><style>body{background-image:url(https://cdn.jsdelivr.net/gh/ashunun/Picture/img/科幻少女绊爱酱.jpg);background-repeat:no-repeat;background-size:cover;background-attachment:fixed}</style><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/noSomeKey.js"></script><script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest/disable-devtool.min.js" disable-menu="false"></script><div id="loading-container"><p class="loading-text">玩命加载中 . . .</p><div class="loading-image"><div></div><div></div><div></div><div></div><div></div></div></div><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><div><img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">阿顺</span></div></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom:.6"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fas fa-tags" style="zoom:.6"></i> <span>标签</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-bookmark" style="zoom:.6"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom:.6"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom:.6"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom:.6"></i> <span>友情链接</span></a></li><li class="hide-on-med-and-down nav-item"><a href="" class="waves-effect waves-light"><i class="fas fa-list" style="zoom:.6"></i> <span>Medias</span> <i class="fas fa-chevron-down" aria-hidden="true" style="zoom:.6"></i></a><ul class="sub-nav menus_item_child"><li><a href="/musics"><i class="fas fa-music" style="margin-top:-20px;zoom:.6"></i> <span>Musics</span></a></li><li><a href="/movies"><i class="fas fa-film" style="margin-top:-20px;zoom:.6"></i> <span>Movies</span></a></li><li><a href="/books"><i class="fas fa-book" style="margin-top:-20px;zoom:.6"></i> <span>Books</span></a></li><li><a href="/gallery"><i class="fas fa-image" style="margin-top:-20px;zoom:.6"></i> <span>Galleries</span></a></li></ul></li><li class="hide-on-med-and-down nav-item"><a href="" class="waves-effect waves-light"><i class="fas fa-toolbox" style="zoom:.6"></i> <span>Tool</span> <i class="fas fa-chevron-down" aria-hidden="true" style="zoom:.6"></i></a><ul class="sub-nav menus_item_child"><li><a href="/agent"><i class="fas fa-user-secret" style="margin-top:-20px;zoom:.6"></i> <span>Agent</span></a></li><li><a href="/navigate"><i class="fas fa-location-arrow" style="margin-top:-20px;zoom:.6"></i> <span>Navigate</span></a></li><li><a href="/api"><i class="fas fa-robot" style="margin-top:-20px;zoom:.6"></i> <span>Api</span></a></li><li><a href="/mac"><i class="fab fa-windows" style="margin-top:-20px;zoom:.6"></i> <span>Mac软件</span></a></li></ul></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom:.85"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">阿顺</div><div class="logo-desc">本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fa-fw fas fa-tags"></i> 标签</a></li><li class="m-nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa-fw fas fa-bookmark"></i> 分类</a></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友情链接</a></li><li class="m-nav-item"><a href="javascript:;"><i class="fa-fw fas fa-list"></i> Medias <span class="m-icon"><i class="fas fa-chevron-right"></i></span></a><ul><li><a href="/musics" style="margin-left:75px"><i class="fa fas fa-music" style="position:absolute;left:50px"></i> <span>Musics</span></a></li><li><a href="/movies" style="margin-left:75px"><i class="fa fas fa-film" style="position:absolute;left:50px"></i> <span>Movies</span></a></li><li><a href="/books" style="margin-left:75px"><i class="fa fas fa-book" style="position:absolute;left:50px"></i> <span>Books</span></a></li><li><a href="/gallery" style="margin-left:75px"><i class="fa fas fa-image" style="position:absolute;left:50px"></i> <span>Galleries</span></a></li></ul></li><li class="m-nav-item"><a href="javascript:;"><i class="fa-fw fas fa-toolbox"></i> Tool <span class="m-icon"><i class="fas fa-chevron-right"></i></span></a><ul><li><a href="/agent" style="margin-left:75px"><i class="fa fas fa-user-secret" style="position:absolute;left:50px"></i> <span>Agent</span></a></li><li><a href="/navigate" style="margin-left:75px"><i class="fa fas fa-location-arrow" style="position:absolute;left:50px"></i> <span>Navigate</span></a></li><li><a href="/api" style="margin-left:75px"><i class="fa fas fa-robot" style="position:absolute;left:50px"></i> <span>Api</span></a></li><li><a href="/mac" style="margin-left:75px"><i class="fa fab fa-windows" style="position:absolute;left:50px"></i> <span>Mac软件</span></a></li></ul></li></ul></div></div></nav></header><script src="/libs/cryptojs/crypto-js.min.js"></script><script>(function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();</script><div class="bg-cover pd-header post-cover" style="background-image:url('https://cdn.jsdelivr.net/gh/ashunun/Picture/img/拉弓女孩 绿色眼睛 高清好看漂亮动漫女生壁纸.jpg')"><div class="container" style="right:0;left:0"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">JavaScript初學者教學</h1></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{width:345px;padding-left:20px;background-color:rgb(255,255,255,.7)!important;border-radius:10px;box-shadow:0 10px 35px 2px rgba(0,0,0,.15),0 5px 15px rgba(0,0,0,.07),0 2px 5px -5px rgba(0,0,0,.1)!important}.toc-widget .toc-title{padding:35px 0 15px 17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content{padding-bottom:30px;height:calc(100vh - 250px);overflow:auto}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#f0f;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px;position:absolute;right:23.5vw;display:block}#toc-content .is-active-link{color:#f0f}#floating-toc-btn{position:fixed;right:15px;bottom:76px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:48px;height:48px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.4rem}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"><a href="/tags/%E5%89%8D%E7%AB%AF/"><span class="chip bg-color">前端</span> </a><a href="/tags/JS/"><span class="chip bg-color">JS</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/Frontend/" class="post-category">Frontend</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp; 2021-12-01</div><div class="post-date info-break-policy"><i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp; 2022-02-02</div><div class="info-break-policy"><i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp; 9 分</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp; <span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><h1 id="JavaScript初學者教學"><a href="#JavaScript初學者教學" class="headerlink" title="JavaScript初學者教學"></a>JavaScript初學者教學</h1><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/114209-1637552529dcca.jpg"></p><h3 id="一、入门JavaScript"><a href="#一、入门JavaScript" class="headerlink" title="一、入门JavaScript"></a>一、入门JavaScript</h3><pre class="language-js"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;h1>hello world!&lt;/h1>"</span><span class="token punctuation">)</span>
+</code></pre><h3 id="二、基本资料形态-amp-变数"><a href="#二、基本资料形态-amp-变数" class="headerlink" title="二、基本资料形态&amp;变数"></a>二、基本资料形态&amp;变数</h3><pre class="language-js"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"有一个人叫小白"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"小白今年18岁"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"小白身高160cm"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"小白爱小青"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h4 id="字串"><a href="#字串" class="headerlink" title="字串"></a>字串</h4><pre class="language-js"><code class="language-js"> <span class="token string">"小白"</span>
+</code></pre><h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><pre class="language-js"><code class="language-js"> <span class="token number">87</span>
+
+ <span class="token number">160</span>
+
+ <span class="token number">160.555</span>
+</code></pre><h4 id="布林值"><a href="#布林值" class="headerlink" title="布林值"></a>布林值</h4><pre class="language-js"><code class="language-js"> <span class="token boolean">true</span> 真
+
+ <span class="token boolean">false</span> 假
+</code></pre><h4 id="只能是英文大小、数字、-、-、组合"><a href="#只能是英文大小、数字、-、-、组合" class="headerlink" title="只能是英文大小、数字、$、_、组合"></a>只能是英文大小、数字、$、_、组合</h4><blockquote><p>开头不能是数字哦</p></blockquote><pre class="language-js"><code class="language-js"> <span class="token keyword">var</span> my_name <span class="token operator">=</span> <span class="token string">"小白"</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> my_age <span class="token operator">=</span> <span class="token string">"18"</span>
+
+ <span class="token keyword">var</span> is_male <span class="token operator">=</span> <span class="token boolean">true</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>my_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>my_age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>is_male<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h5 id="这变数使用方法"><a href="#这变数使用方法" class="headerlink" title="这变数使用方法"></a>这变数使用方法</h5><pre class="language-js"><code class="language-js"> <span class="token keyword">var</span> my_name <span class="token operator">=</span> <span class="token string">"小黑"</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"有一个人叫"</span> <span class="token operator">+</span> my_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>my_name <span class="token operator">+</span> <span class="token string">"今年18岁"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>my_name <span class="token operator">+</span> <span class="token string">"身高160cm"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>my_name <span class="token operator">+</span> <span class="token string">"爱小青"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h5 id="新花样"><a href="#新花样" class="headerlink" title="新花样"></a>新花样</h5><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> my_name <span class="token operator">=</span> <span class="token string">"小黑"</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>my_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+my_name <span class="token operator">=</span> <span class="token string">"小白"</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>my_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+my_name <span class="token operator">=</span> <span class="token string">"18岁"</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>my_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+my_name <span class="token operator">=</span> <span class="token string">"true"</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h3 id="三、如何使用字串、字串用法"><a href="#三、如何使用字串、字串用法" class="headerlink" title="三、如何使用字串、字串用法"></a>三、如何使用字串、字串用法</h3><pre class="language-js"><code class="language-js"> <span class="token keyword">var</span> phrase <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>phrase<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>多少个字节
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>phrase<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>转成大写字母
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>phrase<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>转成小写字母
+</code></pre><blockquote><p>​ 0123456789</p></blockquote><pre class="language-js"><code class="language-js"> document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>phrase<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>找位置
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>phrase<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>相反找h是在那个位置
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>phrase<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>交点h<span class="token operator">~</span>l
+</code></pre><h3 id="四、如何使用数字、数字的用法"><a href="#四、如何使用数字、数字的用法" class="headerlink" title="四、如何使用数字、数字的用法"></a>四、如何使用数字、数字的用法</h3><pre class="language-js"><code class="language-js"> document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">+</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token number">3</span>\<span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">/</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">%</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> namber <span class="token operator">=</span> <span class="token number">666</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>namber<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>取绝对值
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span>namber<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>取最大值
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span>namber<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>取最小值
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><pre class="language-js"><code class="language-js">namber <span class="token operator">=</span> <span class="token number">2.35</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>namber<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>四舍五入
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><pre class="language-js"><code class="language-js"> document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>次方 <span class="token number">2</span>的<span class="token number">3</span>次方<span class="token operator">=</span><span class="token number">8</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>开根号 开<span class="token number">4</span> <span class="token operator">=</span><span class="token number">2</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><pre class="language-js"><code class="language-js"> document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>随机数
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> \ <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>随机数升级版
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> \ <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>随机数高级别  前面加的四舍五入代码
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h3 id="五、制作一个基本的计算机"><a href="#五、制作一个基本的计算机" class="headerlink" title="五、制作一个基本的计算机"></a>五、制作一个基本的计算机</h3><pre class="language-js"><code class="language-js"> <span class="token keyword">var</span> my_name <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"请输入的你的名字"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> my_age <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"请输入的你的年纪"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"你好啊"</span> <span class="token operator">+</span> my_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"你今年"</span> <span class="token operator">+</span> my_age <span class="token operator">+</span> <span class="token string">"岁"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h4 id="版本1-0"><a href="#版本1-0" class="headerlink" title="版本1.0"></a>版本1.0</h4><pre class="language-js"><code class="language-js"> <span class="token keyword">var</span> name1 <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"请输入数字"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> name2 <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"请再输入数字"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ num1 <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>name1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ num2 <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>name2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>num1 <span class="token operator">+</span> num2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h4 id="版本2-0"><a href="#版本2-0" class="headerlink" title="版本2.0"></a>版本2.0</h4><pre class="language-js"><code class="language-js"> <span class="token keyword">var</span> name1 <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"请输入数字"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> name2 <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"请再输入数字"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ num1 <span class="token operator">=</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span>name1<span class="token punctuation">)</span><span class="token punctuation">;</span> 增加float
+
+ num2 <span class="token operator">=</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span>name2<span class="token punctuation">)</span><span class="token punctuation">;</span> 增加float
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>num1 <span class="token operator">+</span> num2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h3 id="六、阵列array"><a href="#六、阵列array" class="headerlink" title="六、阵列array"></a>六、阵列array</h3><h4 id="版本1-0-这样写太累了"><a href="#版本1-0-这样写太累了" class="headerlink" title="版本1.0 这样写太累了"></a>版本1.0 这样写太累了</h4><pre class="language-js"><code class="language-js"> <span class="token keyword">var</span> scores1 <span class="token operator">=</span> <span class="token number">80</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> scores2 <span class="token operator">=</span> <span class="token number">60</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> scores3 <span class="token operator">=</span> <span class="token number">40</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> scores4 <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> scores5 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>scores<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h4 id="版本2-0-1"><a href="#版本2-0-1" class="headerlink" title="版本2.0"></a>版本2.0</h4><pre class="language-js"><code class="language-js"> <span class="token keyword">var</span> scores <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">80</span><span class="token punctuation">,</span><span class="token number">60</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> friends <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"小白"</span><span class="token punctuation">,</span><span class="token string">"小黑"</span><span class="token punctuation">,</span><span class="token string">"小黄"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> friends <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token string">"小黄"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+
+ scores<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span> 第零位改为<span class="token number">50</span>
+
+ 
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>scores<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token number">40</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>friends<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>friends<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>陈列的长度
+</code></pre><h3 id="七、函式-function"><a href="#七、函式-function" class="headerlink" title="七、函式 function"></a>七、函式 function</h3><pre class="language-js"><code class="language-js"> <span class="token keyword">function</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"你好"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre><h4 id="升级版1-0"><a href="#升级版1-0" class="headerlink" title="升级版1.0"></a>升级版1.0</h4><pre class="language-js"><code class="language-js"> <span class="token keyword">function</span> <span class="token function">hello</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"你好"</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token function">hello</span><span class="token punctuation">(</span><span class="token string">"小白"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h4 id="升级版2-0"><a href="#升级版2-0" class="headerlink" title="升级版2.0"></a>升级版2.0</h4><pre class="language-js"><code class="language-js"> <span class="token keyword">function</span> <span class="token function">hello</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"您好"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">"你今年"</span> <span class="token operator">+</span> age <span class="token operator">+</span> <span class="token string">"岁"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token function">hello</span><span class="token punctuation">(</span><span class="token string">"小白"</span><span class="token punctuation">,</span><span class="token string">"18"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h4 id="升级版3-0"><a href="#升级版3-0" class="headerlink" title="升级版3.0"></a>升级版3.0</h4><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span>num2<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>num1 <span class="token operator">+</span> num2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h4 id="升级版4-0"><a href="#升级版4-0" class="headerlink" title="升级版4.0"></a>升级版4.0</h4><pre class="language-js"><code class="language-js"> <span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span>num2<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+​    document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>num1 <span class="token operator">+</span> num2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> num1 <span class="token operator">+</span> num2<span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> 
+</code></pre><h4 id="升级版5-0"><a href="#升级版5-0" class="headerlink" title="升级版5.0"></a>升级版5.0</h4><pre class="language-js"><code class="language-js"> <span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span>num2<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>num1 <span class="token operator">+</span> num2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"您好"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 这里上面已经有<span class="token keyword">return</span>就不会继续执行了
+
+ <span class="token punctuation">}</span>
+
+ value <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token number">8</span>  <span class="token number">10</span>
+</code></pre><h3 id="八、if判断"><a href="#八、if判断" class="headerlink" title="八、if判断"></a>八、if判断</h3><h4 id="1-版本"><a href="#1-版本" class="headerlink" title="1.版本"></a>1.版本</h4><pre class="language-js"><code class="language-js">中文版 ：
+    如果 肚子饿
+
+    ​    我就去吃饭
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span>肚子饿<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+      我就去吃饭
+
+    <span class="token punctuation">}</span>
+
+编程版：
+     <span class="token keyword">var</span> hungry <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token boolean">true</span><span class="token operator">=</span>去 、 <span class="token boolean">false</span><span class="token operator">=</span>不去
+
+     <span class="token keyword">if</span><span class="token punctuation">(</span>hungry<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+       document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"我就去吃饭"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token punctuation">}</span>
+</code></pre><h4 id="2-版本"><a href="#2-版本" class="headerlink" title="2.版本"></a>2.版本</h4><pre class="language-js"><code class="language-js"> 如果 今天下雨
+
+​    我就开车去上班
+
+  否则
+
+​    我就走路去上班
+
+
+
+<span class="token keyword">if</span><span class="token punctuation">(</span>今天下雨<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+  我就开车去上班
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">else</span><span class="token punctuation">{</span>
+
+  我就走路去上班
+
+<span class="token punctuation">}</span>
+
+
+
+ <span class="token keyword">var</span> rainy <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">if</span><span class="token punctuation">(</span>rainy<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"我就开车去上班"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token boolean">true</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token keyword">else</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"我就走路去上班"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token boolean">false</span>
+
+ <span class="token punctuation">}</span>
+</code></pre><h4 id="3-版本"><a href="#3-版本" class="headerlink" title="3.版本"></a>3.版本</h4><pre class="language-js"><code class="language-js">如果 你考<span class="token number">100</span>分
+
+​    我给你<span class="token number">1000</span>元
+
+  或是如果 你考<span class="token number">80</span>以上
+
+​    我给你<span class="token number">500</span>元
+
+  或是如果 你考<span class="token number">60</span>以上
+
+​    我给你<span class="token number">100</span>元
+
+  否侧
+
+​    你给我<span class="token number">300</span>元
+
+
+
+<span class="token keyword">if</span><span class="token punctuation">(</span>如果<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+  
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>或是如果<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">else</span>否则<span class="token punctuation">{</span>
+
+
+
+<span class="token punctuation">}</span>
+
+
+
+ <span class="token keyword">var</span> score <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">if</span><span class="token punctuation">(</span>score<span class="token operator">==</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"我给你1000元"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>score<span class="token operator">>=</span><span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"我给你500元"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>score<span class="token operator">>=</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"我给你100元"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token keyword">else</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"你给我300元"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+</code></pre><h4 id="4-版本"><a href="#4-版本" class="headerlink" title="4.版本"></a>4.版本</h4><pre class="language-js"><code class="language-js">如果 你考<span class="token number">100</span>分 <span class="token function">且</span><span class="token punctuation">(</span><span class="token operator">&amp;&amp;</span><span class="token punctuation">)</span> 今天下雨
+
+​    我就去吃饭
+
+  否则
+
+​    你给我<span class="token number">100</span>元
+
+
+
+
+
+ <span class="token keyword">var</span> score <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> rainy <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+
+
+ <span class="token keyword">if</span><span class="token punctuation">(</span>score<span class="token operator">==</span><span class="token number">100</span> <span class="token operator">&amp;&amp;</span> rainy<span class="token punctuation">)</span><span class="token punctuation">{</span> 两边要一直是<span class="token boolean">true</span>，否则，会是<span class="token boolean">false</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"我给你100元"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token boolean">true</span> <span class="token number">100</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token keyword">else</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"你给我100元"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span> <span class="token boolean">false</span> <span class="token operator">&lt;</span><span class="token number">100</span>
+</code></pre><h4 id="5-版本"><a href="#5-版本" class="headerlink" title="5.版本"></a>5.版本</h4><pre class="language-js"><code class="language-js">如果 你考<span class="token number">100</span>分 <span class="token function">或</span><span class="token punctuation">(</span><span class="token operator">||</span><span class="token punctuation">)</span> 今天下雨
+
+​    我就去吃饭
+
+  否则
+
+​    你给我<span class="token number">100</span>元
+
+
+
+
+
+ <span class="token keyword">var</span> score <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> rainy <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+
+
+ <span class="token keyword">if</span><span class="token punctuation">(</span>score<span class="token operator">==</span><span class="token number">100</span> <span class="token operator">||</span> rainy<span class="token punctuation">)</span><span class="token punctuation">{</span> 两边要一直 是<span class="token boolean">true</span>，否则，会还是<span class="token boolean">true</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"我给你100元"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token boolean">true</span> <span class="token number">100</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token keyword">else</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"你给我100元"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span> <span class="token boolean">false</span> <span class="token operator">&lt;</span><span class="token number">100</span>
+</code></pre><h4 id="6-版本"><a href="#6-版本" class="headerlink" title="6.版本"></a>6.版本</h4><pre class="language-js"><code class="language-js">如果 你考<span class="token number">100</span>分 <span class="token function">或</span><span class="token punctuation">(</span><span class="token operator">||</span><span class="token punctuation">)</span> 今天 <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">)</span>没有 下雨
+
+​    我就去吃饭
+
+  否则
+
+​    你给我<span class="token number">100</span>元
+
+
+
+
+
+ <span class="token keyword">var</span> score <span class="token operator">=</span> <span class="token number">90</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> rainy <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+
+
+ <span class="token keyword">if</span><span class="token punctuation">(</span>score<span class="token operator">==</span><span class="token number">100</span> <span class="token operator">||</span> <span class="token operator">!</span>rainy<span class="token punctuation">)</span><span class="token punctuation">{</span> score<span class="token operator">=</span><span class="token boolean">false</span>，<span class="token operator">!</span>是反向了，rainy<span class="token operator">=</span><span class="token boolean">false</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"我给你100元"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token boolean">true</span> <span class="token number">100</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token keyword">else</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"你给我100元"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span> <span class="token boolean">false</span> <span class="token operator">&lt;</span><span class="token number">100</span>
+</code></pre><h4 id="小练习-执行最大值"><a href="#小练习-执行最大值" class="headerlink" title="小练习 执行最大值"></a>小练习 执行最大值</h4><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">max_num</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span>num2<span class="token punctuation">,</span>num3<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   <span class="token keyword">if</span><span class="token punctuation">(</span>num1<span class="token operator">>=</span>num2 <span class="token operator">&amp;&amp;</span> num1<span class="token operator">>=</span>num3<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+​     <span class="token keyword">return</span> num1<span class="token punctuation">;</span>
+
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>num2<span class="token operator">>=</span>num1 <span class="token operator">&amp;&amp;</span> num2<span class="token operator">>=</span>num3<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+​     <span class="token keyword">return</span> num2<span class="token punctuation">;</span>
+
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">else</span><span class="token punctuation">{</span>
+
+​     <span class="token keyword">return</span> num3<span class="token punctuation">;</span>
+
+   <span class="token punctuation">}</span>
+
+ <span class="token punctuation">}</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span> <span class="token function">max_num</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6.9</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token number">6.9</span>
+
+</code></pre><h3 id="九、物件-object"><a href="#九、物件-object" class="headerlink" title="九、物件 object"></a>九、物件 object</h3><blockquote><p>key value</p><p>键 值</p></blockquote><h4 id="版本1-0-1"><a href="#版本1-0-1" class="headerlink" title="版本1.0"></a>版本1.0</h4><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+
+   name<span class="token punctuation">:</span><span class="token string">"小白"</span><span class="token punctuation">,</span>
+
+   age<span class="token punctuation">:</span><span class="token number">23</span><span class="token punctuation">,</span>
+
+   is_male<span class="token punctuation">:</span><span class="token boolean">true</span>
+
+ <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>小白
+</code></pre><h4 id="版本2-0-2"><a href="#版本2-0-2" class="headerlink" title="版本2.0"></a>版本2.0</h4><pre class="language-js"><code class="language-js"> <span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+
+   name<span class="token punctuation">:</span><span class="token string">"小白"</span><span class="token punctuation">,</span>
+
+   age<span class="token punctuation">:</span><span class="token number">23</span><span class="token punctuation">,</span>
+
+   is_male<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+
+   print_name<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+​     document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token punctuation">}</span>
+
+ <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+ person<span class="token punctuation">.</span><span class="token function">print_name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>小白
+</code></pre><h3 id="十、真实世界物件-物件object"><a href="#十、真实世界物件-物件object" class="headerlink" title="十、真实世界物件  物件object"></a>十、真实世界物件 物件object</h3><pre class="language-js"><code class="language-js"> <span class="token keyword">var</span> movie <span class="token operator">=</span> <span class="token punctuation">{</span>
+
+   title<span class="token punctuation">:</span><span class="token string">"刻在你心底的名字"</span><span class="token punctuation">,</span>
+
+   maker<span class="token punctuation">:</span><span class="token string">"氧气电影"</span><span class="token punctuation">,</span>
+
+   duration<span class="token punctuation">:</span><span class="token number">114</span><span class="token punctuation">,</span>
+
+   actors<span class="token punctuation">:</span><span class="token punctuation">[</span>
+
+​     <span class="token punctuation">{</span>
+
+​       name<span class="token punctuation">:</span><span class="token string">"陈吴森"</span><span class="token punctuation">,</span>
+
+​       age<span class="token punctuation">:</span><span class="token number">24</span><span class="token punctuation">,</span>
+
+​       is_male<span class="token punctuation">:</span><span class="token boolean">true</span>
+
+​     <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+​     <span class="token punctuation">{</span>
+
+​       name<span class="token punctuation">:</span><span class="token string">"曾敬华"</span><span class="token punctuation">,</span>
+
+​       age<span class="token punctuation">:</span><span class="token number">23</span><span class="token punctuation">,</span>
+
+​       is_male<span class="token punctuation">:</span><span class="token boolean">true</span>
+
+​     <span class="token punctuation">}</span>
+
+   <span class="token punctuation">]</span>
+
+ <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>movie<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>movie<span class="token punctuation">.</span>actors<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span>
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>movie<span class="token punctuation">.</span>actors<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><blockquote><p>时间：01.44.45</p></blockquote><h4 id="while-回圈"><a href="#while-回圈" class="headerlink" title="while 回圈"></a>while 回圈</h4><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+
+
+ <span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   i<span class="token operator">++</span><span class="token punctuation">;</span> i<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+
+
+
+ <span class="token keyword">do</span><span class="token punctuation">{</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   i<span class="token operator">++</span><span class="token punctuation">;</span> i<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>  把i<span class="token operator">++</span>去掉就网页挂了
+
+ <span class="token punctuation">}</span><span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">)</span>
+</code></pre><blockquote><p>01.50.15</p></blockquote><h3 id="十一、密码验证程式"><a href="#十一、密码验证程式" class="headerlink" title="十一、密码验证程式"></a>十一、密码验证程式</h3><h4 id="这种是无限次数"><a href="#这种是无限次数" class="headerlink" title="这种是无限次数"></a>这种是无限次数</h4><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> password <span class="token operator">=</span> <span class="token number">123456</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> input<span class="token punctuation">;</span>
+
+ <span class="token keyword">while</span><span class="token punctuation">(</span>password <span class="token operator">!=</span> input<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   input <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"请输入密码"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"登入成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h4 id="这种是有限次数"><a href="#这种是有限次数" class="headerlink" title="这种是有限次数"></a>这种是有限次数</h4><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> password <span class="token operator">=</span> <span class="token number">123456</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> input<span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> entry_count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> entry_limit <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> out_0f_limit <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+
+
+ <span class="token keyword">while</span><span class="token punctuation">(</span>password <span class="token operator">!=</span> input <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>out_0f_limit<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   entry_count<span class="token operator">++</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">if</span><span class="token punctuation">(</span>entry_count<span class="token operator">&lt;=</span>entry_limit<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+​     input <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"请输入密码"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">else</span><span class="token punctuation">{</span>
+
+​     out_0f_limit <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+   <span class="token punctuation">}</span>
+
+ <span class="token punctuation">}</span>
+
+
+
+ <span class="token keyword">if</span><span class="token punctuation">(</span>out_0f_limit<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"登入成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token keyword">else</span><span class="token punctuation">{</span>
+
+   <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"登入成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+</code></pre><h3 id="十二、for-回圈"><a href="#十二、for-回圈" class="headerlink" title="十二、for 回圈"></a>十二、for 回圈</h3><p>01.58.45</p><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   i<span class="token operator">++</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+
+
+
+ <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+
+
+
+ <span class="token keyword">var</span> friends <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"小黑"</span><span class="token punctuation">,</span><span class="token string">"小黄"</span><span class="token punctuation">,</span><span class="token string">"小绿"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+ <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>friends<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>friends<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+
+</code></pre><h3 id="十三、制作一个问答程式"><a href="#十三、制作一个问答程式" class="headerlink" title="十三、制作一个问答程式"></a>十三、制作一个问答程式</h3><pre class="language-js"><code class="language-js"> <span class="token keyword">var</span> questions <span class="token operator">=</span> <span class="token punctuation">[</span>
+   <span class="token punctuation">{</span>
+​     prompt<span class="token punctuation">:</span><span class="token string">"香蕉是什么颜色？\n(a)红色\n(b)绿色\n(c)黄色"</span><span class="token punctuation">,</span>
+​     answer<span class="token punctuation">:</span><span class="token string">"c"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   
+​     prompt<span class="token punctuation">:</span><span class="token string">"草莓是什么颜色？\n(a)红色\n(b)紫色\n(c)黄色"</span><span class="token punctuation">,</span>
+​     answer<span class="token punctuation">:</span><span class="token string">"a"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token punctuation">{</span>
+​     prompt<span class="token punctuation">:</span><span class="token string">"1公尺等于几公分？\n(a)1\n(b)10\n(c)100"</span><span class="token punctuation">,</span>
+​     answer<span class="token punctuation">:</span><span class="token string">"c"</span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">]</span>
+
+ <span class="token keyword">var</span> score <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+ <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>questions<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">var</span> input<span class="token operator">=</span><span class="token function">prompt</span><span class="token punctuation">(</span>questions<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>prompt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>input<span class="token operator">==</span>questions<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>answer<span class="token punctuation">)</span><span class="token punctuation">{</span>
+​     score<span class="token operator">++</span><span class="token punctuation">;</span>
+​     <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"答对了！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">else</span><span class="token punctuation">{</span>
+​     <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"答错了"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+
+ <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"共答对了"</span> <span class="token operator">+</span> score <span class="token operator">+</span> <span class="token string">"题！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h3 id="十四、2维阵列、形状回圈-02-11-00"><a href="#十四、2维阵列、形状回圈-02-11-00" class="headerlink" title="十四、2维阵列、形状回圈 02.11.00"></a>十四、2维阵列、形状回圈 02.11.00</h3><pre class="language-ja"><code class="language-ja">var number = [
+
+   [1,2,3],
+
+   [4,5,6],
+
+   [7,8,9]
+
+   [0]
+
+ ];
+
+  document.write(number[1][2]); 6  【1代表第二行，2代表第二行第三个哦】 
+
+
+
+ for(var i=0; i<4; i++){
+
+   for(var j=0; j<3; j++){
+
+​     document.write("i" + i +",j:" + j);
+
+​     document.write("<br>");
+
+   }
+
+ }
+</code></pre><h4 id="版本1-0-2"><a href="#版本1-0-2" class="headerlink" title="版本1.0"></a>版本1.0</h4><pre class="language-js"><code class="language-js"> <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>number<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span>number<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+​     document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>number<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+
+   <span class="token punctuation">}</span>
+
+   document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;br/>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+
+</code></pre><h3 id="十五、class-02-20-00"><a href="#十五、class-02-20-00" class="headerlink" title="十五、class  02.20.00"></a>十五、class 02.20.00</h3><pre class="language-js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">phone</span> <span class="token punctuation">{</span>
+
+   <span class="token function">constructor</span><span class="token punctuation">(</span>number<span class="token punctuation">,</span> year<span class="token punctuation">,</span> is_waterproof<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+​     <span class="token keyword">this</span><span class="token punctuation">.</span>number <span class="token operator">=</span> number<span class="token punctuation">;</span>
+
+​     <span class="token keyword">this</span><span class="token punctuation">.</span>year <span class="token operator">=</span> year<span class="token punctuation">;</span>
+
+​     <span class="token keyword">this</span><span class="token punctuation">.</span>is_waterproof <span class="token operator">=</span> is_waterproof<span class="token punctuation">;</span>
+
+   <span class="token punctuation">}</span>
+
+   <span class="token function">phone_age</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+​     <span class="token keyword">return</span> <span class="token number">2021</span> <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>year<span class="token punctuation">;</span>
+
+   <span class="token punctuation">}</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token keyword">var</span> phone1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">phone</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">,</span> <span class="token number">2020</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> phone2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">phone</span><span class="token punctuation">(</span><span class="token string">"456"</span><span class="token punctuation">,</span> <span class="token number">2019</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> phone3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">phone</span><span class="token punctuation">(</span><span class="token string">"789"</span><span class="token punctuation">,</span> <span class="token number">2018</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+
+ document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>phone1<span class="token punctuation">.</span><span class="token function">phone_age</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>var phone1 = {</p><p>number:”123”,</p><p>year:2020,</p><p>is_waterproof:false,</p><p>phone_age:function(){</p><p>​ return 2021 - this.year;</p><p>}</p><p>}</p><p>var phone2 = {</p><p>number:”456”,</p><p>year:2018,</p><p>is_waterproof:false,</p><p>phone_age:function(){</p><p>​ return 2021 - this.year;</p><p>}</p><p>}</p><p>var phone3 = {</p><p>number:”789”,</p><p>year:2018,</p><p>is_waterproof:true,</p><p>phone_age:function(){</p><p>​ return 2021 - this.year;</p><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> phone1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+
+  number<span class="token punctuation">:</span><span class="token string">"123"</span><span class="token punctuation">,</span>
+
+  year<span class="token punctuation">:</span><span class="token number">2020</span><span class="token punctuation">,</span>
+
+  is_waterproof<span class="token punctuation">:</span><span class="token boolean">false</span><span class="token punctuation">,</span>
+
+  phone_age<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+​    <span class="token keyword">return</span> <span class="token number">2021</span> <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>year<span class="token punctuation">;</span>
+
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+
+
+<span class="token keyword">var</span> phone2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+
+  number<span class="token punctuation">:</span><span class="token string">"456"</span><span class="token punctuation">,</span>
+
+  year<span class="token punctuation">:</span><span class="token number">2018</span><span class="token punctuation">,</span>
+
+  is_waterproof<span class="token punctuation">:</span><span class="token boolean">false</span><span class="token punctuation">,</span>
+
+  phone_age<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+​    <span class="token keyword">return</span> <span class="token number">2021</span> <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>year<span class="token punctuation">;</span>
+
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+
+
+<span class="token keyword">var</span> phone3 <span class="token operator">=</span> <span class="token punctuation">{</span>
+
+  number<span class="token punctuation">:</span><span class="token string">"789"</span><span class="token punctuation">,</span>
+
+  year<span class="token punctuation">:</span><span class="token number">2018</span><span class="token punctuation">,</span>
+
+  is_waterproof<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+
+  phone_age<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+​    <span class="token keyword">return</span> <span class="token number">2021</span> <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>year<span class="token punctuation">;</span>
+
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre><h3 id="十六、如何取得html元素-02-27-00"><a href="#十六、如何取得html元素-02-27-00" class="headerlink" title="十六、如何取得html元素 02.27.00"></a>十六、如何取得html元素 02.27.00</h3><pre class="language-js"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+ window<span class="token punctuation">.</span>document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"哈哈哈"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ window<span class="token punctuation">.</span><span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"哈哈哈"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> h2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"header"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ h2<span class="token punctuation">.</span>innerText<span class="token operator">=</span><span class="token string">"小白超美"</span><span class="token punctuation">;</span>
+
+ h2<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token string">"red"</span><span class="token punctuation">;</span>
+
+ h2<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"blue"</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> link <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"link"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ link<span class="token punctuation">.</span>href <span class="token operator">=</span> <span class="token string">"https:amazon.com"</span><span class="token punctuation">;</span>
+</code></pre><h3 id="十七、event-listener-02-39-00"><a href="#十七、event-listener-02-39-00" class="headerlink" title="十七、event listener  02.39.00"></a>十七、event listener 02.39.00</h3><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">handle_clink</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+​    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"叫你按就按呀！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+​    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   element<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token string">"按屁啊！"</span><span class="token punctuation">;</span>
+
+   element<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"red"</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+</code></pre><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> btn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"btn"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ btn<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+​    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"叫你按就按呀！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">this</span><span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token string">"按屁啊！"</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">this</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"red"</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+
+
+ <span class="token keyword">var</span> img <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"img"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ img<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"mousemove"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   <span class="token keyword">this</span><span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">"http://inews.gtimg.com/newsapp_ls/0/14212222993/0"</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+
+
+ img<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"mousemove"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   <span class="token keyword">this</span><span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">"https://cdn.jsdelivr.net/gh/geda-999/git_text/img/%E6%B3%A2%E6%B3%A2%E5%A4%B4%E5%8A%A8%E6%BC%AB%E5%A5%B3%E7%94%9F%E5%A3%81.jpg"</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><h3 id="十八、部落格-02-53-00"><a href="#十八、部落格-02-53-00" class="headerlink" title="十八、部落格 02.53.00"></a>十八、部落格 02.53.00</h3><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> title <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"title"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> content <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"content"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> btn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"btn"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> list <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"list"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+
+btn<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+  list<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> list<span class="token punctuation">.</span>innerHTML <span class="token template-string"><span class="token string">`
+
+    &lt;div class="article">
+
+​    &lt;h2></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>title<span class="token punctuation">.</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/h2>
+
+        &lt;p></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>content<span class="token punctuation">.</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/p>
+
+  &lt;/div>
+
+  `</span></span><span class="token punctuation">;</span>
+
+  title<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+
+  content<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css"><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></div><hr><div class="reprint" id="reprint-statement"><div class="reprint__author"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-user">文章作者: </i></span><span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">xiaoshun</a></span></div><div class="reprint__type"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-link">文章链接: </i></span><span class="reprint-info"><a href="https://ashun.tk/posts/f776.html">https://ashun.tk/posts/f776.html</a></span></div><div class="reprint__notice"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-copyright">版权声明: </i></span><span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">xiaoshun</a> !</span></div></div><script async defer>document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }</script><div class="tag_share" style="display:block"><div class="post-meta__tag-list" style="display:inline-block"><div class="article-tag"><a href="/tags/%E5%89%8D%E7%AB%AF/"><span class="chip bg-color">前端</span> </a><a href="/tags/JS/"><span class="chip bg-color">JS</span></a></div></div><div class="post_share" style="zoom:80%;width:fit-content;display:inline-block;float:right;margin:-.15rem 0"><link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div><script src="/libs/share/js/social-share.min.js"></script></div></div></div><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.4rem;line-height:38px}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .close:hover{color:#ef5350;transform:scale(1.3);-moz-transform:scale(1.3);-webkit-transform:scale(1.3);-o-transform:scale(1.3)}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-content ul{padding-left:0!important}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{background-color:#ccc;color:#fff}.reward-tabs .wechat-tab .active{color:#fff!important;background-color:#22ab38!important}.reward-tabs .alipay-tab .active{color:#fff!important;background-color:#019fe8!important}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"><a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赏识是我前进的动力</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"><img src="/medias/loading.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"><img src="/medias/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script></div></div><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fas fa-chevron-left"></i>&nbsp;上一篇</div><div class="card"><a href="/posts/f774.html"><div class="card-image"><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/猫女2k动漫壁纸.jpg" class="responsive-img" alt="判断条件语句"> <span class="card-title">判断条件语句</span></div></a><div class="card-content article-content"><div class="summary block-with-text">判断语句、条件语句、错误捕捉语句以及关键字</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i>2021-12-04 </span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/Frontend/" class="post-category">Frontend</a></span></div></div><div class="card-action article-tags"><a href="/tags/%E5%89%8D%E7%AB%AF/"><span class="chip bg-color">前端</span> </a><a href="/tags/JS/"><span class="chip bg-color">JS</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color">下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/posts/f786.html"><div class="card-image"><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/好好学习 天天向上 厚涂 女孩子眼镜 笔 工程师 板绘 好看动漫壁纸.jpg" class="responsive-img" alt="Bootstrap"> <span class="card-title">Bootstrap</span></div></a><div class="card-content article-content"><div class="summary block-with-text">年轻人 加油吧！</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i>2021-11-23 </span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/Frontend/" class="post-category">Frontend</a></span></div></div><div class="card-action article-tags"><a href="/tags/%E5%89%8D%E7%AB%AF/"><span class="chip bg-color">前端</span></a></div></div></div></div></article></div><script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script><script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script><script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script><script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget card" style="background-color:#fff"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="/libs/tocbot/tocbot.min.js"></script><script>$(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });</script></main><footer class="page-footer bg-color"><link rel="stylesheet" href="/libs/aplayer/APlayer.min.css"><style>.aplayer .aplayer-lrc p{display:none;font-size:12px;font-weight:700;line-height:16px!important}.aplayer .aplayer-lrc p.aplayer-lrc-current{display:none;font-size:15px;color:#42b983}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body{left:-66px!important}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover{left:0!important}</style><div><div class="row"><meting-js class="col l8 offset-l2 m10 offset-m1 s12" server="netease" type="playlist" id="2660651585" fixed="true" autoplay theme="#42b983" loop order="list" preload="auto" volume="0.7" list-folded="true"></meting-js></div></div><script src="/libs/aplayer/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><div class="container row center-align" style="margin-bottom:15px!important"><div class="col s12 m8 l8 copy-right">Copyright&nbsp;&copy; <span id="year">2019 </span><a href="/about" target="_blank">Ashun </a><span id="heartbeat" class="fa fas fa-heartbeat"></span><br><span id="binft"></span><br><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var binft=function(r){function n(t){for(var e=document.createDocumentFragment(),r=0;r<t;r++){var n=document.createElement("span");n.textContent=String.fromCharCode(94*Math.random()+33),n.style.color=d[Math.floor(Math.random()*d.length)],e.appendChild(n)}return e}var i="",l=["青青陵上柏，磊磊涧中石。","人生天地间，忽如远行客。","斗酒相娱乐，聊厚不为薄。","驱车策驽马，游戏宛与洛。","洛中何郁郁，冠带自相索。","长衢罗夹巷，王侯多第宅。","两宫遥相望，双阙百余尺。","极宴娱心意，戚戚何所迫？"].map(function(t){return t+""}),a=2,g=1,o=5,b=75,d=["rgb(110,64,170)","rgb(150,61,179)","rgb(191,60,175)","rgb(228,65,157)","rgb(254,75,131)","rgb(255,94,99)","rgb(255,120,71)","rgb(251,150,51)","rgb(226,183,47)","rgb(198,214,60)","rgb(175,240,91)","rgb(127,246,88)","rgb(82,246,103)","rgb(48,239,130)","rgb(29,223,163)","rgb(26,199,194)","rgb(35,171,216)","rgb(54,140,225)","rgb(76,110,219)","rgb(96,84,200)"],f={text:"",prefixP:-o,skillI:0,skillP:0,direction:"forward",delay:a,step:g};!function t(){var e=l[f.skillI];f.step?f.step--:(f.step=g,f.prefixP<i.length?(0<=f.prefixP&&(f.text+=i[f.prefixP]),f.prefixP++):"forward"===f.direction?f.skillP<e.length?(f.text+=e[f.skillP],f.skillP++):f.delay?f.delay--:(f.direction="backward",f.delay=a):0<f.skillP?(f.text=f.text.slice(0,-1),f.skillP--):(f.skillI=(f.skillI+1)%l.length,f.direction="forward")),r.textContent=f.text,r.appendChild(n(f.prefixP<i.length?Math.min(o,o+f.prefixP):Math.min(o,e.length-f.skillP))),setTimeout(t,b)}()};binft(document.getElementById("binft"))</script><script>var now=new Date;function createtime(){var n=new Date("03/08/2020 16:44:00");now.setTime(now.getTime()+250),days=(now-n)/1e3/60/60/24,dnum=Math.floor(days),hours=(now-n)/1e3/60/60-24*dnum,hnum=Math.floor(hours),1==String(hnum).length&&(hnum="0"+hnum),minutes=(now-n)/1e3/60-1440*dnum-60*hnum,mnum=Math.floor(minutes),1==String(mnum).length&&(mnum="0"+mnum),seconds=(now-n)/1e3-86400*dnum-3600*hnum-60*mnum,snum=Math.round(seconds),1==String(snum).length&&(snum="0"+snum),document.getElementById("timeDate").innerHTML="本站已安全运行 "+dnum+" 天 ",document.getElementById("times").innerHTML=hnum+" 小时 "+mnum+" 分 "+snum+" 秒"}setInterval("createtime()",250)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://t.ashun.gq" class="tooltipped" target="_blank" data-tooltip="访问我的Nav" data-position="top" data-delay="50"><i class="fas fa-location-arrow"></i> </a><a href="mailto:1322001816@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i> </a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1322001816" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1322001816" data-position="top" data-delay="50"><i class="fab fa-qq"></i> </a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script type="text/javascript">$(function(){!function(t,s,i){"use strict";$.ajax({url:t,dataType:"xml",success:function(t){var e=$("entry",t).map(function(){return{title:$("title",this).text(),content:$("content",this).text(),url:$("url",this).text()}}).get(),n=document.getElementById(s),r=document.getElementById(i);n.addEventListener("input",function(){var f='<ul class="search-result-list">',m=this.value.trim().toLowerCase().split(/[\s\-]+/);r.innerHTML="",this.value.trim().length<=0||(e.forEach(function(t){var n,e,r,s,i,l=!0,a=t.title.trim().toLowerCase(),c=t.content.trim().replace(/<[^>]+>/g,"").toLowerCase(),u=0===(u=t.url).indexOf("/")?t.url:"/"+u,o=-1,h=-1;""!==a&&""!==c&&m.forEach(function(t,e){n=a.indexOf(t),o=c.indexOf(t),n<0&&o<0?l=!1:(o<0&&(o=0),0===e&&(h=o))}),l&&(f+="<li><a href='"+u+"' class='search-result-title'>"+a+"</a>",e=t.content.trim().replace(/<[^>]+>/g,""),0<=h&&(s=h+80,(r=h-20)<0&&(r=0),0===r&&(s=100),s>e.length&&(s=e.length),i=e.substr(r,s),m.forEach(function(t){var e=new RegExp(t,"gi");i=i.replace(e,'<em class="search-keyword">'+t+"</em>")}),f+='<p class="search-result">'+i+"...</p>"),f+="</li>")}),f+="</ul>",r.innerHTML=f)})}})}("/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script src="/libs/others/clicklove.js" async></script><script async src="/libs/others/busuanzi.pure.mini.js"></script><script type="text/javascript" size="150" alpha="0.6" zindex="-1" src="/libs/background/ribbon.min.js" async></script><script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async></script><script src="/libs/instantpage/instantpage.js" type="module"></script><script src="/libs/materialize/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script><script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script type="text/javascript">var st,OriginTitile=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script><canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:1;pointer-events:none"></canvas><script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/clickBom.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"><script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script><script type="text/javascript">var windowWidth=$(window).width();768<windowWidth&&document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>')</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body></html>
